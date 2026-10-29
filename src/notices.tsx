@@ -56,6 +56,7 @@ export const NOTICES: Record<string, Notice> = {
         <li><strong>21 March</strong><span>Email sent to ProBono SG; Tricia Teo replied.</span></li>
         <li><strong>26 March</strong><span>Call with ProBono SG; set our goals; chose the name.</span></li>
         <li><strong>17 April</strong><span>First practice ride.</span></li>
+        <li><strong>28 May</strong><span>Visited the MWLC and met Nur.</span></li>
         <li><strong>1 June</strong><span>Ride day: 70.19 km.</span></li>
         <li><strong>August</strong><span>Campaign closed at $5,067; final reflections.</span></li>
       </ol>

@@ -11,15 +11,17 @@ npm run build
 
 Then either run `npm run preview` and open http://localhost:4173, or double-click `dist/index.html`. It works offline.
 
+It is one scrolling page. On a laptop or projector, the route down the left shows the five CAS stages, and the rider marks how far through the story you are. Visitors can simply scroll; when presenting, use the keys or a clicker to jump section by section.
+
 | Key | Does |
 |---|---|
-| → / Space / Page Down (clickers) | Next (steps through the five riders on "Five riders, five roles") |
-| ← / Page Up | Back |
+| → / ↓ / Space / Page Down (clickers) | Next section (on "Our roles" it steps through each rider first) |
+| ← / ↑ / Page Up | Previous section |
 | 1 – 5 | Jump to a CAS stage |
-| Home / End | First / last slide |
+| Home / End | Top / last section |
 | F | Fullscreen |
 
-The cursor hides after 2 seconds. On the booth laptop the deck returns to the title after 3 minutes idle; add `?attract=off` to the address to stop that.
+The cursor hides after 2 seconds. On the booth laptop the page scrolls back to the top after 3 minutes idle; add `?attract=off` to the address to stop that. Screens narrower than 1100px get the phone layout.
 
 ## Hosting on GitHub Pages
 

@@ -260,8 +260,8 @@ export function Mwlc({ headingId }: PanelProps) {
           Visiting the MWLC
         </h2>
         <p className="body p-mwlc__where" data-enter style={i(1)}>
-          579 Serangoon Road, an office shared with the Migrant Workers' Centre. We met Nur, the MWLC's only
-          full-time lawyer.
+          On 28 May we visited 579 Serangoon Road, an office shared with the Migrant Workers' Centre, and met
+          Nur, the MWLC's only full-time lawyer.
         </p>
         <ul className="p-mwlc__list" data-enter style={i(2)}>
           <li>Most cases are unpaid wages, wrongful dismissal and contract disputes.</li>

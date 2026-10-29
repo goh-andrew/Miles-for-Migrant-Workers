@@ -324,17 +324,21 @@
   justify-content: flex-end;
   padding: 0 64px 40px 8px;
   opacity: 0;
+  visibility: hidden;
   transform: translateX(40px);
   transition:
     opacity 260ms ease-out,
-    transform 260ms ease-out;
+    transform 260ms ease-out,
+    visibility 0s linear 260ms;
 }
 .role.is-open .role__body {
   opacity: 1;
+  visibility: visible;
   transform: none;
   transition:
     opacity 520ms ease-out 260ms,
-    transform 700ms var(--ease-out-expo) 260ms;
+    transform 700ms var(--ease-out-expo) 260ms,
+    visibility 0s;
 }
 .role__role {
   margin: 0 0 14px;
@@ -420,7 +424,7 @@
   margin-top: auto;
 }
 .p-mwlc__where {
-  max-width: 34ch;
+  max-width: 40ch;
 }
 .p-mwlc__list {
   margin: 0;
@@ -1172,7 +1176,7 @@
    Narrow screens: the deck becomes a scrolling page. Each panel takes
    its own phone composition and the walkway sticks to the top.
 =================================================================== */
-@media (max-width: 899px) {
+@media (max-width: 1099px) {
   :root {
     --m: 20px;
   }
@@ -1184,9 +1188,6 @@
     opacity: 1;
     padding-bottom: 72px;
     scroll-margin-top: 0;
-  }
-  .flow .panel[data-state="away"] {
-    opacity: 1;
   }
   .flow .seam {
     display: none;
