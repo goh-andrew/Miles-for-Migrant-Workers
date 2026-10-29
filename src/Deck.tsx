@@ -42,7 +42,7 @@ const LAST = PANELS.length - 1;
 const firstOfStage = (s: number) => PANELS.findIndex((p) => p.stage === s);
 const STAGE_STARTS = STAGES.map((_, s) => firstOfStage(s));
 const ATTRACT_MS = 3 * 60 * 1000;
-const GLIDE_MS = 750; // how long one section-to-section glide takes
+const GLIDE_MS = 600; // how long one section-to-section glide takes
 const HEAD_H = 0; // wide screens have no top bar; the spine carries the stages
 const NARROW_HEAD_H = 80; // sticky stage bar on phones
 const LOGO = `${import.meta.env.BASE_URL}logo.svg`;
@@ -79,6 +79,7 @@ export function Deck() {
   const startAt = useRef(readHash());
 
   const glide = useRef(0);
+  const glideId = useRef(0);
   const scrollToSection = useCallback(
     (n: number, behavior: ScrollBehavior) => {
       const el = sections.current[n];
@@ -88,22 +89,28 @@ export function Deck() {
       setIndex(n);
       cancelAnimationFrame(glide.current);
       if (behavior !== "smooth") {
+        glideId.current++;
         window.scrollTo(0, top);
         return;
       }
       // Our own eased glide, so every jump (keys, clicker, wheel, touchpad) moves the same way.
       const from = window.scrollY;
       const t0 = performance.now();
-      const ease = (x: number) => (x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2);
+      // Ease out: it moves the moment you scroll, then settles gently.
+      const ease = (x: number) => 1 - Math.pow(1 - x, 3);
+      let landed = false;
       const tick = (now: number) => {
         const p = Math.min(1, (now - t0) / GLIDE_MS);
         window.scrollTo(0, from + (top - from) * ease(p));
         if (p < 1) glide.current = requestAnimationFrame(tick);
+        else landed = true;
       };
       glide.current = requestAnimationFrame(tick);
-      // If the browser stalls the animation (a hidden tab), land there anyway.
+      // If the browser stalls the animation (a hidden tab), land there anyway, unless the
+      // glide finished or a newer jump has taken over by then.
+      const mine = ++glideId.current;
       window.setTimeout(() => {
-        if (Math.abs(window.scrollY - top) > 4) {
+        if (!landed && mine === glideId.current && Math.abs(window.scrollY - top) > 4) {
           cancelAnimationFrame(glide.current);
           window.scrollTo(0, top);
         }
@@ -139,24 +146,47 @@ export function Deck() {
     if (narrow || notice) return;
     let acc = 0;
     let lastAt = 0;
-    let quietUntil = 0;
+    let busyUntil = 0; // a glide is running
+    let coasting = false; // the last gesture's touchpad momentum is still arriving
+    let lastDir = 0;
+    let peak = 0; // largest event of the current gesture
+    const recent: number[] = []; // sizes of the latest events, to tell a new push from momentum
     const onWheel = (e: WheelEvent) => {
       if (e.ctrlKey || Math.abs(e.deltaX) > Math.abs(e.deltaY)) return; // pinch zoom, sideways swipes
       e.preventDefault();
       const now = performance.now();
-      if (now - lastAt > 200) acc = 0; // a fresh gesture
+      const dy = e.deltaMode === 1 ? e.deltaY * 16 : e.deltaY;
+      const size = Math.abs(dy);
+      const dir = Math.sign(dy);
+      // A new gesture: after a pause, after turning round, or when scrolling picks up again
+      // once the last swipe's momentum has faded to under half its peak. (Momentum only
+      // fades, and the speed-up at the start of a swipe happens before any fading.)
+      const paused = now - lastAt > 160;
+      const prev = recent.length >= 2 ? Math.max(...recent.slice(-2)) : Infinity;
+      const pushed = coasting && size > prev * 1.4 && prev < peak * 0.5 && size > 4;
+      const turned = coasting && dir !== 0 && lastDir !== 0 && dir !== lastDir;
+      const fresh = paused || pushed || turned;
       lastAt = now;
-      // Swallow the rest of the gesture, including a touchpad's momentum, until it settles.
-      if (now < quietUntil) {
-        quietUntil = Math.max(quietUntil, now + 200);
-        return;
+      if (fresh) {
+        coasting = false;
+        acc = 0;
+        peak = 0;
+        recent.length = 0;
       }
-      acc += e.deltaMode === 1 ? e.deltaY * 16 : e.deltaY;
-      if (Math.abs(acc) < 30) return;
+      recent.push(size);
+      if (recent.length > 6) recent.shift();
+      peak = Math.max(peak, size);
+      if (coasting) return; // momentum from a gesture that has already moved the page
+      // While a glide runs, only a clearly new gesture may start the next one.
+      if (now < busyUntil && !fresh) return;
+      acc += dy;
+      if (Math.abs(acc) < 24) return;
       if (acc > 0) moveRef.current.forward();
       else moveRef.current.back();
+      lastDir = Math.sign(acc);
       acc = 0;
-      quietUntil = now + GLIDE_MS;
+      coasting = true;
+      busyUntil = now + GLIDE_MS * 0.8;
     };
     window.addEventListener("wheel", onWheel, { passive: false });
     return () => window.removeEventListener("wheel", onWheel);
