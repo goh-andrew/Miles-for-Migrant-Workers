@@ -22,7 +22,7 @@ const PANELS: PanelDef[] = [
   { key: "skyline", stage: 0, title: "The people behind the skyline", Comp: P.Skyline },
   { key: "why", stage: 0, title: "Why the MWLC", Comp: P.Why },
   { key: "probono", stage: 0, title: "Learning from ProBono SG", Comp: P.ProBono },
-  { key: "roles", stage: 1, title: "Five riders, five roles", Comp: P.Roles, notice: "team", steps: P.ROLE_COUNT, stepLabel: "Next rider" },
+  { key: "roles", stage: 1, title: "Our roles", Comp: P.Roles, notice: "team", steps: P.ROLE_COUNT, stepLabel: "Next rider" },
   { key: "goals", stage: 1, title: "Our goals", Comp: P.Goals, notice: "timeline" },
   { key: "mwlc", stage: 1, title: "Visiting the MWLC", Comp: P.Mwlc },
   { key: "give", stage: 1, title: "Two ways to give", Comp: P.Give, notice: "training" },

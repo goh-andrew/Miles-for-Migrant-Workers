@@ -31,7 +31,6 @@ export function Title({ active, headingId }: PanelProps) {
   return (
     <div className="p-title">
       <div className="p-title__wall">
-        <Seams at={[33.3, 66.6]} />
         <h1 id={headingId} className="h-display" data-enter style={i(0)}>
           <span>Miles for</span> <span>Migrant Workers</span>
         </h1>
@@ -180,7 +179,7 @@ export function Roles({ headingId, step = 0, onStep }: PanelProps) {
     <div className="p-roles">
       <div className="p-roles__intro">
         <h2 id={headingId} className="h-panel" data-enter style={i(0)}>
-          Five riders, five roles
+          Our roles
         </h2>
         <p className="body" data-enter style={i(1)}>
           We gave out roles at our second meeting, on 17 March. Each of us took charge of one part of the
@@ -360,7 +359,7 @@ export function Online({ headingId }: PanelProps) {
       </div>
       <div className="p-online__cell board" data-enter style={i(1)}>
         <p className="p-online__word">WhatsApp</p>
-        <p className="body">the same message, sent by each of us to our own contacts</p>
+        <p className="body">sent by each of us to our own contacts</p>
       </div>
       <div className="p-online__cell p-online__dark" data-enter style={i(2)}>
         <p className="p-online__word">1,770</p>

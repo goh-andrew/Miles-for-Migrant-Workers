@@ -1,6 +1,6 @@
 /* Panel compositions on the 1920 x 880 wall. Neighbouring panels never share a layout. */
 
-/* 00 title: split poster with the seam photograph and the project signboard */
+/* 00 title: a plain red wall, the pasted photograph straddling the walkway, and the signboard */
 .p-title {
   display: grid;
   grid-template-columns: 1fr 600px;
@@ -583,8 +583,7 @@
   grid-template-columns: 640px 1fr;
   gap: 32px;
   align-items: center;
-  padding: 20px 0;
-  border-top: 4px solid var(--color-seam);
+  padding: 24px 0;
 }
 .p-people__what {
   font-weight: 850;
@@ -1515,7 +1514,6 @@
     grid-template-columns: 1fr;
     gap: 6px;
     padding: 14px 0;
-    border-top-width: 3px;
   }
   .p-people__what {
     font-size: 26px;
