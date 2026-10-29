@@ -744,22 +744,9 @@
 .board .p-online__word {
   color: var(--color-panel);
 }
-/* the WhatsApp message, cut out of the chat: top right of the pile, its foot just over the banner */
-.p-online__bubble {
-  position: absolute;
-  right: 0;
-  top: 0;
-  height: 38%;
-  aspect-ratio: 778 / 1860;
-  margin: 0;
-  transform: rotate(4deg);
-  z-index: 3;
-}
-.p-online__bubble img {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
+/* the four posts in two tidy columns, sized as shares of the pile so they keep their places at
+   any height: LinkedIn over Strava on the left, the WhatsApp message over the banner on the right.
+   Each tilt is --r, where the paste-in animation ends. */
 .p-online__pile {
   grid-column: 4;
   grid-row: 1 / 4;
@@ -769,35 +756,53 @@
 .p-online__post {
   position: absolute;
   border-width: 10px;
+  transform: rotate(var(--r, 0deg));
 }
 .p-online__post--1 {
-  left: 10px;
+  left: 0;
   top: 0;
-  width: 380px;
-  height: 640px;
-  transform: rotate(-3deg);
+  width: 49%;
+  height: 47%;
 }
 .p-online__post--1 img {
   object-position: top;
 }
 .p-online__post--2 {
+  --r: -2deg;
   right: 0;
-  top: 120px;
-  width: 440px;
-  z-index: 2;
+  top: 67%;
+  width: 48%;
 }
 .p-online__post--2 img {
   height: auto;
 }
 .p-online__post--3 {
-  right: 40px;
-  bottom: 0;
-  width: 360px;
-  height: 460px;
-  z-index: 3;
+  --r: 2deg;
+  left: 2%;
+  top: 51.5%;
+  width: 45%;
+  height: 45.5%;
 }
 .p-online__post--3 img {
-  object-position: 50% 62%;
+  object-position: 50% 60%;
+}
+/* the WhatsApp message, cut out of the chat */
+.p-online__bubble {
+  position: absolute;
+  right: 0;
+  top: 0.5%;
+  width: 45.5%;
+  height: 61.5%;
+  aspect-ratio: 778 / 1860;
+  margin: 0;
+  transform: rotate(var(--r, 0deg));
+}
+.p-online__bubble img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: top right;
 }
 
 /* 10 ride: text column, the route map, the signboard */

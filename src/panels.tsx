@@ -396,10 +396,10 @@ export function Online({ headingId }: PanelProps) {
         <p className="body">our campaign page, with the full story and a donate button</p>
       </div>
       <div className="p-online__pile">
-        <figure className="paste p-online__post p-online__post--1" data-paste style={{ ...i(0), "--r": "-3deg" } as CSSProperties}>
+        <figure className="paste p-online__post p-online__post--1" data-paste style={{ ...i(0), "--r": "-2deg" } as CSSProperties}>
           <img src={img("linkedin-post.jpg")} alt="Andrew's LinkedIn post launching Miles for Migrant Workers" width={1050} height={1792} />
         </figure>
-        <figure className="p-online__bubble" data-paste style={{ ...i(1), "--r": "4deg" } as CSSProperties}>
+        <figure className="p-online__bubble" data-paste style={{ ...i(1), "--r": "2deg" } as CSSProperties}>
           <img
             src={img("whatsapp-message.webp")}
             alt="The WhatsApp message we sent: who we are, the ride on 1 June, and links to pledge and donate"
@@ -407,7 +407,7 @@ export function Online({ headingId }: PanelProps) {
             height={1860}
           />
         </figure>
-        <figure className="paste p-online__post p-online__post--2" data-paste style={i(1)}>
+        <figure className="paste p-online__post p-online__post--2" data-paste style={i(3)}>
           <img src={img("pledge-banner.jpg")} alt="The pledge banner we shared, with its QR code" width={1014} height={548} />
         </figure>
         <figure className="paste p-online__post p-online__post--3" data-paste style={i(2)}>

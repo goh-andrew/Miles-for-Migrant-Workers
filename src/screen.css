@@ -316,30 +316,8 @@
 .page .p-online__cell .body {
   font-size: 32px;
 }
-/* the three posts share the column's height instead of bunching at the top */
 .page .p-online__pile {
   margin-left: 48px;
-}
-.page .p-online__post--1 {
-  left: 0;
-  top: 0;
-  width: 56%;
-  height: 58%;
-}
-/* tilted the other way from the LinkedIn post (the paste-in animation ends on --r) */
-.page .p-online__post--2 {
-  --r: 3deg;
-  right: 0;
-  top: 36%;
-  width: 72%;
-  transform: rotate(3deg);
-}
-.page .p-online__post--3 {
-  left: 18%;
-  right: auto;
-  bottom: 0;
-  width: 46%;
-  height: 40%;
 }
 
 /* ------------------------------ 10 ride ------------------------------ */

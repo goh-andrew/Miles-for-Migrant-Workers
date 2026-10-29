@@ -1,6 +1,6 @@
 {
  "url": "http://localhost:4173/?attract=off",
- "at": "2026-10-29T15:21:45.561Z",
+ "at": "2026-10-29T15:35:03.412Z",
  "allow": [],
  "viewports": [
   {
@@ -1122,7 +1122,7 @@
      "blurred": 0,
      "roundedBoxes": 0,
      "boxRadius": 0,
-     "squareMedia": 12,
+     "squareMedia": 10,
      "roundedMedia": 0,
      "mediaRadius": 0,
      "textShadow": 0,
@@ -1381,14 +1381,14 @@
       "height": 900,
       "words": 39,
       "media": 4,
-      "middle": 52,
+      "middle": 57,
       "heading": {
        "text": "Going online",
        "size": 104,
        "tag": "h2"
       },
       "left": 326,
-      "right": 19,
+      "right": 30,
       "textLeft": 326,
       "textRight": 499,
       "fullBleed": false,
@@ -2934,7 +2934,7 @@
        "tag": "h2"
       },
       "left": 42,
-      "right": 26,
+      "right": 20,
       "textLeft": 42,
       "textRight": 288,
       "fullBleed": false,
@@ -3126,8 +3126,8 @@
     0.99
    ],
    "motion": {
-    "elements": 167,
-    "css": 167,
+    "elements": 168,
+    "css": 168,
     "transitions": 0,
     "scripted": 0,
     "videos": 1,
@@ -4469,7 +4469,7 @@
        "tag": "p"
       },
       "left": 42,
-      "right": 26,
+      "right": 22,
       "textLeft": 42,
       "textRight": 58,
       "fullBleed": false,
