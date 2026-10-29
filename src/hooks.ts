@@ -20,20 +20,25 @@ export const usePrefersReducedMotion = () => useMedia("(prefers-reduced-motion: 
 export const useIsNarrow = () => useMedia("(max-width: 1099px)");
 
 /**
- * Width of the route spine, and the scale that fits a 1920px-wide section into the
- * column beside it.
+ * Width of the route spine, the scale that fits a 1920px-wide section into the column
+ * beside it, and how tall that section's board must be (in board px) to fill the
+ * screen under a top bar of headH.
  */
-export function usePageLayout() {
+export function usePageLayout(headH: number) {
   const measure = () => {
     const w = document.documentElement.clientWidth;
     const spineW = Math.round(Math.min(420, Math.max(260, w * 0.2)));
-    return { spineW, k: (w - spineW) / 1920 };
+    const k = (w - spineW) / 1920;
+    const wallH = Math.max(880, Math.round((window.innerHeight - headH) / k));
+    return { spineW, k, wallH };
   };
   const [layout, setLayout] = useState(measure);
   useEffect(() => {
     const on = () => setLayout(measure());
     window.addEventListener("resize", on);
     return () => window.removeEventListener("resize", on);
+    // headH is fixed for the page's lifetime
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return layout;
 }

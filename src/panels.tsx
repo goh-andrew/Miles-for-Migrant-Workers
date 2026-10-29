@@ -37,13 +37,6 @@ export function Title({ active, headingId }: PanelProps) {
         <p className="statement p-title__lede" data-enter style={i(1)}>
           We rode 70.19&nbsp;km and raised $5,067 for ProBono&nbsp;SG's Migrant Workers Law Centre.
         </p>
-        <div className="p-title__credit" data-enter style={i(3)}>
-          <img src={img("probono-shield.png")} alt="ProBono SG shield" width={145} height={184} />
-          <p>
-            <strong>For ProBono SG</strong>
-            The money went to its Migrant Workers Law Centre.
-          </p>
-        </div>
         <figure className="paste p-title__photo" data-paste style={{ "--r": "4deg" } as CSSProperties}>
           <img
             src={img("group.jpg")}
@@ -72,6 +65,13 @@ export function Title({ active, headingId }: PanelProps) {
             <tr><th scope="row">Commenced</th><td>17 March 2026</td></tr>
           </tbody>
         </table>
+        <div className="p-title__credit">
+          <img src={img("probono-shield.png")} alt="ProBono SG shield" width={145} height={184} />
+          <p>
+            <strong>For ProBono SG</strong>
+            The money went to its Migrant Workers Law Centre.
+          </p>
+        </div>
       </aside>
     </div>
   );

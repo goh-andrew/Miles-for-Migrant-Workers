@@ -73,63 +73,23 @@ img {
 }
 
 /* ------------------------------ page ------------------------------ */
-/* One scrolling page: a slim stage bar on top, the route spine on the left, and the
-   sections beside it. Each section is drawn on a 1920 x 880 board and scaled (--k) to
+/* One scrolling page: the route spine on the left and the sections beside it. Each section is drawn on a 1920 x 880 board and scaled (--k) to
    the column, so its composition holds at any width. */
+/* The page still scrolls; the bar itself is hidden. */
 html {
-  scrollbar-gutter: stable;
-  scrollbar-color: var(--color-panel) var(--color-walkway);
+  scrollbar-width: none;
+}
+html::-webkit-scrollbar {
+  display: none;
 }
 .page {
   min-height: 100svh;
   background: var(--color-walkway);
 }
-.topbar {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  height: var(--head-h);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 32px;
-  padding: 0 32px;
-  background: var(--color-walkway);
-  color: var(--color-on-panel);
-}
-.topbar__mark {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  color: inherit;
-  text-decoration: none;
-  font-weight: 850;
-  font-stretch: 106%;
-  font-size: 20px;
-}
-.topbar__stages {
-  display: flex;
-  gap: 28px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.topbar__stage {
-  padding: 6px 0;
-  border: 0;
-  border-bottom: 4px solid transparent;
-  background: none;
-  color: var(--color-plate-text);
-  font-weight: 700;
-  font-size: 18px;
-  transition: color 160ms;
-}
-.topbar__stage:hover {
-  color: var(--color-on-panel);
-}
-.topbar__stage[aria-current="step"] {
-  color: var(--color-on-panel);
-  border-bottom-color: var(--color-on-panel);
+/* Scrolling settles on one section at a time, each the size of the screen. */
+html:has(.page) {
+  scroll-snap-type: y proximity;
+  scroll-padding-top: var(--head-h, 64px);
 }
 .page__body {
   display: grid;
@@ -138,10 +98,13 @@ html {
 }
 .page__main {
   min-width: 0;
+  /* the boards are 1920px wide before scaling; keep that out of the page width */
+  overflow-x: clip;
 }
 .sect {
   position: relative;
   height: calc(var(--wall-h) * var(--k));
+  scroll-snap-align: start;
 }
 .sect > .panel {
   transform: scale(var(--k));

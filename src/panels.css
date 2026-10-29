@@ -2,13 +2,15 @@
 
 /* 00 title: a plain red wall, the pasted photograph straddling the walkway, and the signboard */
 .p-title {
+  /* how much taller the board is than the 880px the slides were made for */
+  --extra: calc(var(--wall-h) - 880px);
   display: grid;
   grid-template-columns: 1fr 600px;
   height: 100%;
 }
 .p-title__wall {
   position: relative;
-  padding: 104px var(--m) 0;
+  padding: calc(104px + var(--extra) * 0.2) var(--m) 0;
 }
 .p-title__wall .h-display {
   position: relative;
@@ -18,25 +20,21 @@
   margin-top: 44px;
   max-width: 24ch;
 }
+/* the beneficiary, credited on the signboard */
 .p-title__credit {
-  position: absolute;
-  left: var(--m);
-  bottom: 64px;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   gap: 24px;
-  max-width: 600px;
+  padding-top: 28px;
+  border-top: 2px solid var(--color-board-line);
 }
 .p-title__credit img {
   width: 96px;
   height: auto;
-  border: 6px solid var(--color-board);
-  background: var(--color-board);
 }
 .p-title__credit p {
   margin: 0;
-  max-width: 13em;
-  font-size: 28px;
+  font-size: 24px;
   line-height: 1.35;
   font-weight: 500;
 }
@@ -52,7 +50,7 @@
   position: absolute;
   right: 72px;
   bottom: -28px;
-  width: 640px;
+  width: calc(640px + var(--extra) * 0.55);
   aspect-ratio: 4 / 3;
   transform: rotate(4deg);
   z-index: 2;
@@ -60,7 +58,8 @@
 .p-title__board {
   display: flex;
   flex-direction: column;
-  gap: 26px;
+  justify-content: center;
+  gap: 40px;
   padding: 56px 56px 32px;
 }
 
@@ -157,8 +156,8 @@
 }
 .p-why .h-panel {
   position: relative;
-  align-self: end;
-  padding: 0 40px 64px var(--m);
+  align-self: start;
+  padding: 72px 40px 0 var(--m);
   font-size: 104px;
 }
 .p-why .h-panel > span {
@@ -205,8 +204,8 @@
 .p-probono__caption {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  gap: 40px;
+  justify-content: center;
+  gap: 64px;
   padding: 64px 48px 64px var(--m);
   background: var(--color-seam);
 }
@@ -240,6 +239,7 @@
 .p-probono__photo {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   margin: 0;
 }
 .p-probono__frame {
@@ -400,7 +400,9 @@
 /* 06 mwlc: full-height photograph, text column */
 .p-mwlc {
   display: grid;
-  grid-template-columns: 940px 1fr;
+  /* The five of us span 19-74% of the photo's width. A full-height crop keeps them all
+     only if the column is about as wide as the board is tall. */
+  grid-template-columns: min(calc(var(--wall-h) * 1.03), 1320px) 1fr;
   height: 100%;
 }
 .p-mwlc__photo {
@@ -411,17 +413,21 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 50% 60%;
+  object-position: 40% 60%;
+}
+.p-mwlc__text .h-panel {
+  font-size: 88px;
 }
 .p-mwlc__text {
   display: flex;
   flex-direction: column;
-  gap: 22px;
+  justify-content: center;
+  gap: 28px;
   padding: 56px var(--m) 48px 64px;
 }
 
 .p-mwlc__text .statement {
-  margin-top: auto;
+  margin-top: 24px;
 }
 .p-mwlc__where {
   max-width: 40ch;
@@ -463,7 +469,8 @@
   max-width: 52ch;
 }
 .browser {
-  flex: 1;
+  flex: none;
+  margin-block: auto;
   min-height: 0;
   display: flex;
   flex-direction: column;
@@ -494,11 +501,8 @@
   text-overflow: ellipsis;
 }
 .browser img {
-  flex: 1;
-  min-height: 0;
   width: 100%;
-  object-fit: cover;
-  object-position: left bottom;
+  height: auto;
 }
 .dial {
   display: flex;
@@ -572,15 +576,19 @@
 }
 .p-people__list {
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 .p-people__list .h-panel {
   margin-bottom: 40px;
 }
 .p-people__list ul {
+  flex: 1;
   margin: 0;
-  padding: 0;
+  padding: 0 0 24px;
   list-style: none;
   display: grid;
+  align-content: space-evenly;
 }
 .p-people__list li {
   display: grid;
@@ -721,8 +729,9 @@
 .p-ride .route {
   grid-column: 1;
   grid-row: 2;
-  align-self: start;
-  width: 1150px;
+  align-self: center;
+  width: 100%;
+  padding-bottom: 48px;
 }
 .p-ride__board {
   grid-column: 2;
@@ -844,7 +853,7 @@
 .p-plan__photo {
   position: relative;
   align-self: start;
-  height: 820px;
+  height: min(calc(var(--wall-h) - 120px), 1000px);
   margin-top: 8px;
   transform: rotate(-4deg);
 }
@@ -958,7 +967,7 @@
 .p-learnt__head {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: flex-start;
   gap: 24px;
 }
 .p-learnt__head .h-panel {
@@ -1304,10 +1313,7 @@
     padding: 48px var(--m) 50vw;
   }
   .p-title__credit {
-    position: relative;
-    left: auto;
-    bottom: auto;
-    margin-top: 28px;
+    padding-top: 18px;
   }
   .p-title__credit img {
     width: 56px;

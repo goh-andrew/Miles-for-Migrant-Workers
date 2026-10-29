@@ -42,7 +42,7 @@ const LAST = PANELS.length - 1;
 const firstOfStage = (s: number) => PANELS.findIndex((p) => p.stage === s);
 const STAGE_STARTS = STAGES.map((_, s) => firstOfStage(s));
 const ATTRACT_MS = 3 * 60 * 1000;
-const HEAD_H = 64; // top bar on wide screens
+const HEAD_H = 0; // wide screens have no top bar; the spine carries the stages
 const NARROW_HEAD_H = 80; // sticky stage bar on phones
 const LOGO = `${import.meta.env.BASE_URL}logo.svg`;
 
@@ -62,7 +62,7 @@ function Arrow() {
 export function Deck() {
   const narrow = useIsNarrow();
   const reduced = usePrefersReducedMotion();
-  const { spineW, k } = usePageLayout();
+  const { spineW, k, wallH } = usePageLayout(HEAD_H);
   const headH = narrow ? NARROW_HEAD_H : HEAD_H;
   const [index, setIndex] = useState(0);
   // Which part of each stepped section is showing (the five riders).
@@ -319,40 +319,16 @@ export function Deck() {
     );
   }
 
-  const pageStyle = { "--k": k, "--spine-w": `${spineW}px`, "--head-h": `${HEAD_H}px` } as CSSProperties;
+  const pageStyle = { "--k": k, "--wall-h": `${wallH}px`, "--spine-w": `${spineW}px`, "--head-h": `${HEAD_H}px` } as CSSProperties;
   return (
     <div className={`page${cursorHidden ? " no-cursor" : ""}`} style={pageStyle}>
-      <header className="topbar">
-        <a
-          className="topbar__mark"
-          href="#/0"
-          onClick={(e) => {
-            e.preventDefault();
-            go(0);
-          }}
-        >
-          <img src={LOGO} alt="" width={32} height={32} />
-          Miles for Migrant Workers
-        </a>
-        <nav aria-label="CAS stages">
-          <ol className="topbar__stages">
-            {STAGES.map((name, s) => (
-              <li key={name}>
-                <button className="topbar__stage" aria-current={s === stage ? "step" : undefined} onClick={() => go(firstOfStage(s))}>
-                  {name}
-                </button>
-              </li>
-            ))}
-          </ol>
-        </nav>
-      </header>
       <div className="page__body">
         <Spine
           stages={STAGES}
           stageStarts={STAGE_STARTS}
           sections={sections}
           headH={HEAD_H}
-          layoutKey={k}
+          layoutKey={k * 10000 + wallH}
           currentStage={stage}
           currentTitle={current.title}
           currentWhen={current.when}
