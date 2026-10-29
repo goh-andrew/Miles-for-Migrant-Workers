@@ -199,29 +199,29 @@
 /* ------------------------------ 04 roles ------------------------------ */
 .page .p-roles {
   padding: 96px var(--m) 80px;
-  row-gap: 56px;
+  row-gap: 48px;
 }
 .page .p-roles__intro .body {
   font-size: 34px;
   max-width: 36ch;
 }
-.page .role,
-.page .role__tab {
-  flex-basis: 132px;
+.page .role {
+  flex-basis: 160px;
 }
-.page .role__tab span {
-  font-size: 44px;
+.page .role__label {
+  font-size: 40px;
 }
 .page .role__body {
-  width: 1120px;
-  padding-bottom: 56px;
+  padding: 40px 52px 48px;
+}
+.page .role__name {
+  font-size: 34px;
 }
 .page .role__role {
-  font-size: 96px;
-  margin-bottom: 24px;
+  font-size: 88px;
 }
 .page .role__body .body {
-  font-size: 36px;
+  font-size: 34px;
 }
 
 /* ------------------------------ 05 goals ------------------------------ */

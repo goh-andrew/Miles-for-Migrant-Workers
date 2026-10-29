@@ -169,12 +169,13 @@ export function ProBono({ headingId }: PanelProps) {
 }
 
 /* 04 ----------------------------------------------------------------- */
+// Photos are 3:4 crops with the face centred across and about 30% down (img/people).
 const ROLES = [
-  { name: "Andrew Goh", role: "Fundraising", text: "Set up the Giving.sg campaign and the pledge form, wrote to ProBono SG, and checked the charity's status." },
-  { name: "Oliver Oo", role: "Outreach and nutrition", text: "Ran our Instagram posts and was also our nutritionist." },
-  { name: "Harley Huang", role: "Route", text: "Researched and planned a safe 70 km route along the East Coast to Changi and back towards Marina Bay." },
-  { name: "Bruce Liau", role: "Health and safety", text: "Led safety planning, timing and our arrangements on the day, together with Chenyu." },
-  { name: "Chenyu Hsiao", role: "Equipment", text: "Looked after bikes and kit, and shared the logistics of the day with Bruce." },
+  { name: "Andrew Goh", photo: "andrew", role: "Fundraising", text: "Set up the Giving.sg campaign and the pledge form, wrote to ProBono SG, and checked the charity's status." },
+  { name: "Oliver Oo", photo: "oliver", role: "Outreach and nutrition", text: "Ran our Instagram posts and was also our nutritionist." },
+  { name: "Harley Huang", photo: "harley", role: "Route", text: "Researched and planned a safe 70 km route along the East Coast to Changi and back towards Marina Bay." },
+  { name: "Bruce Liau", photo: "bruce", role: "Health and safety", text: "Led safety planning, timing and our arrangements on the day, together with Chenyu." },
+  { name: "Chenyu Hsiao", photo: "chenyu", role: "Equipment", text: "Looked after bikes and kit, and shared the logistics of the day with Bruce." },
 ];
 
 export const ROLE_COUNT = ROLES.length;
@@ -198,13 +199,16 @@ export function Roles({ headingId, step = 0, onStep }: PanelProps) {
           const isOpen = n === open;
           return (
             <div key={r.name} className={`role role--${n + 1}${isOpen ? " is-open" : ""}`}>
+              <img className="role__photo" src={img(`people/${r.photo}.jpg`)} alt="" width={900} height={1200} />
               <button
                 className="role__tab"
                 aria-expanded={isOpen}
                 aria-controls={`role-${n}`}
                 onClick={() => setOpen(n)}
               >
-                <span>{r.name}</span>
+                <span className="role__band">
+                  <span className="role__label">{r.name}</span>
+                </span>
               </button>
               <div
                 id={`role-${n}`}
@@ -212,6 +216,7 @@ export function Roles({ headingId, step = 0, onStep }: PanelProps) {
                 aria-hidden={!isOpen}
                 {...(!isOpen ? ({ inert: "" } as Record<string, string>) : {})}
               >
+                <p className="role__name">{r.name}</p>
                 <p className="role__role">{r.role}</p>
                 <p className="body">{r.text}</p>
               </div>
