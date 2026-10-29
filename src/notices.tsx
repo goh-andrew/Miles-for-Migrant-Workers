@@ -146,7 +146,6 @@ export const NOTICES: Record<string, Notice> = {
         <li><h3>ProBono SG</h3><p>Tricia Teo, for the call that shaped our goals and her guidance on running the campaign.</p></li>
         <li><h3>The Migrant Workers Law Centre</h3><p>Nur, for walking us through the centre's work.</p></li>
         <li><h3>Our donors and pledgers</h3><p>Everyone who donated or pledged. Together you gave $5,067.</p></li>
-        <li><h3>Our teachers</h3><p>Including our Geography teacher, who let us speak on the Thailand trip.</p></li>
       </ul>
     ),
   },

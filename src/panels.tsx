@@ -55,7 +55,6 @@ export function Title({ active, headingId }: PanelProps) {
         </figure>
       </div>
       <aside className="board p-title__board" aria-label="Project signboard">
-        <h2 className="label">Project signboard</h2>
         <div>
           <FlipTiles value="70.19" unit="km" active={active} label="70.19 kilometres" />
           <p className="tile-caption">ridden on 1 June 2026</p>
@@ -491,7 +490,7 @@ export function Learnt({ headingId }: PanelProps) {
     {
       lo: "Global engagement",
       quote:
-        "Before we started, I understood the issue in a fairly abstract way. After visiting the MWLC, speaking with Nur and spending months fundraising and advocating for the cause, it feels far more personal.",
+        "Before we started, we understood the issue in a fairly abstract way. After visiting the MWLC, speaking with Nur and spending months fundraising and advocating for the cause, it feels far more personal.",
     },
     {
       lo: "Initiative and planning",
@@ -527,7 +526,7 @@ export function Learnt({ headingId }: PanelProps) {
   );
 }
 /* 14 ----------------------------------------------------------------- */
-export function Questions({ headingId, onNotices }: PanelProps & { onNotices: () => void }) {
+export function Questions({ headingId }: PanelProps) {
   return (
     <div className="p-questions">
       <h2 id={headingId} className="p-questions__q">
@@ -538,16 +537,12 @@ export function Questions({ headingId, onNotices }: PanelProps & { onNotices: ()
           Tonight is our Demonstration stage. We're sharing what we did so more people know the MWLC exists.
         </p>
         <div className="p-questions__actions" data-enter style={i(1)}>
-          <button className="btn btn-solid" onClick={onNotices}>
-            Read the notices
-          </button>
-          <span className="p-questions__or">or</span>
           <a className="btn btn-ghost" href="https://www.probono.sg/" target="_blank" rel="noreferrer">
             Learn about ProBono SG
           </a>
         </div>
         <p className="body p-questions__thanks" data-enter style={i(2)}>
-          Thank you to ProBono SG, Tricia Teo, Nur at the MWLC, our teachers, and our 50+ donors.
+          Thank you to ProBono SG, Tricia Teo, Nur at the MWLC and our 50+ donors.
         </p>
       </div>
     </div>
