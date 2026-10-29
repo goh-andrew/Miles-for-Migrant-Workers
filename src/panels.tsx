@@ -2,6 +2,7 @@ import { type CSSProperties, type ReactNode } from "react";
 import { FlipTiles } from "./components/FlipTiles";
 import { PledgeDial } from "./components/PledgeDial";
 import { RouteMap } from "./components/RouteMap";
+import { usePrefersReducedMotion } from "./hooks";
 
 export type PanelProps = {
   active: boolean;
@@ -398,6 +399,14 @@ export function Online({ headingId }: PanelProps) {
         <figure className="paste p-online__post p-online__post--1" data-paste style={{ ...i(0), "--r": "-3deg" } as CSSProperties}>
           <img src={img("linkedin-post.jpg")} alt="Andrew's LinkedIn post launching Miles for Migrant Workers" width={1050} height={1792} />
         </figure>
+        <figure className="p-online__bubble" data-paste style={{ ...i(1), "--r": "4deg" } as CSSProperties}>
+          <img
+            src={img("whatsapp-message.webp")}
+            alt="The WhatsApp message we sent: who we are, the ride on 1 June, and links to pledge and donate"
+            width={778}
+            height={1860}
+          />
+        </figure>
         <figure className="paste p-online__post p-online__post--2" data-paste style={i(1)}>
           <img src={img("pledge-banner.jpg")} alt="The pledge banner we shared, with its QR code" width={1014} height={548} />
         </figure>
@@ -462,16 +471,42 @@ export function Plan({ headingId }: PanelProps) {
           We still finished all 70.19&nbsp;km.
         </p>
       </div>
-      <figure className="paste p-plan__photo" data-paste style={{ "--r": "-4deg" } as CSSProperties}>
-        <img
-          src={img("tyre.jpg")}
-          alt="Three of us crouched over an upturned bike, pumping up the leaking tyre"
-          width={900}
-          height={1600}
-        />
-        <span className="sticker p-plan__sticker">Slow puncture, 1 June</span>
-      </figure>
+      <div className="p-plan__media">
+        <figure className="paste p-plan__photo" data-paste style={{ "--r": "-4deg" } as CSSProperties}>
+          <img
+            src={img("tyre.jpg")}
+            alt="Three of us crouched over an upturned bike, pumping up the leaking tyre"
+            width={900}
+            height={1600}
+          />
+          <span className="sticker p-plan__sticker">Slow puncture, 1 June</span>
+        </figure>
+        <PlanVideo />
+      </div>
     </div>
+  );
+}
+
+/** The pump at work: a short silent loop. With reduced motion it waits for a press of play. */
+function PlanVideo() {
+  const reduced = usePrefersReducedMotion();
+  return (
+    <figure className="paste p-plan__video" data-paste style={{ ...i(1), "--r": "3deg" } as CSSProperties}>
+      <video
+        src={img("pumping-tyre.mp4")}
+        poster={img("pumping-tyre.jpg")}
+        width={478}
+        height={850}
+        muted
+        loop
+        playsInline
+        autoPlay={!reduced}
+        controls={reduced}
+        preload="metadata"
+        aria-label="Video: pumping the tyre back up on ride day"
+      />
+      <span className="sticker p-plan__sticker p-plan__sticker--video">Pumping it back up</span>
+    </figure>
   );
 }
 
@@ -554,7 +589,7 @@ export function Questions({ headingId }: PanelProps) {
       </h2>
       <div className="p-questions__middle">
         <p className="statement" data-enter style={i(0)}>
-          Tonight is our Demonstration stage. We're sharing what we did so more people know the MWLC exists.
+          Tonight is our Demonstration stage. We're sharing what we did so more people know about the Migrant Workers Law Centre and the valuable work they do.
         </p>
         <div className="p-questions__actions" data-enter style={i(1)}>
           <a className="btn btn-ghost" href="https://www.probono.sg/" target="_blank" rel="noreferrer">

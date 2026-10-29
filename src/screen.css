@@ -381,12 +381,38 @@
 .page .p-plan__text > .statement {
   font-size: 48px;
 }
-/* the photo stays inside the section, tilted only a little */
-.page .p-plan__photo {
+/* the text keeps a column wide enough for a two-line headline; the two prints share the rest */
+.page .p-plan {
+  grid-template-columns: minmax(720px, 1fr) auto;
+}
+.page .p-plan .h-panel {
+  font-size: 96px;
+}
+.page .p-plan__sticker--video {
+  right: 20px;
+}
+/* the two events stack, leaving room for the photo and the video side by side */
+.page .p-plan__events {
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+.page .p-plan__media {
   align-self: center;
-  height: min(calc(var(--wall-h) - 280px), 1100px);
+  padding-right: 24px;
+}
+/* both prints stay inside the section, tilted only a little */
+.page .p-plan__photo,
+.page .p-plan__video {
+  /* two prints this tall plus the gap fit beside a 720px text column, tilt included */
+  height: min(calc(var(--wall-h) - 420px), 760px);
   margin-top: 0;
+}
+.page .p-plan__photo {
   transform: rotate(-3deg);
+}
+.page .p-plan__video {
+  margin-top: 80px;
+  transform: rotate(2deg);
 }
 
 /* ------------------------------ 12 result ------------------------------ */
