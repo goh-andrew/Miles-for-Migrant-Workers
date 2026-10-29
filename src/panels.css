@@ -322,6 +322,14 @@
 /* open: the photo is wide and short above the caption band, so show more of the upper half */
 .role.is-open .role__photo {
   filter: none;
+  object-position: 50% 58%;
+}
+/* Harley's face sits near the top of his photo; a smaller shift keeps his hat in */
+.role--3.is-open .role__photo {
+  object-position: 50% 38%;
+}
+/* Chenyu's photo is a group shot: keep the view on his face */
+.role--5.is-open .role__photo {
   object-position: 50% 32%;
 }
 .role.is-open::after {
@@ -378,7 +386,8 @@
   display: grid;
   gap: 10px;
   padding: 32px 44px 36px;
-  background: var(--color-seam);
+  /* seam, slightly see-through so the photo carries on behind the caption */
+  background: rgb(94 20 32 / 0.8);
   color: var(--color-on-panel);
   opacity: 0;
   visibility: hidden;
