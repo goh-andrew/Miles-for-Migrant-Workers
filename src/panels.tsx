@@ -126,6 +126,13 @@ export function Why({ headingId }: PanelProps) {
         raised through <Mark tone="seam">Giving.sg</Mark>, so every dollar went straight to the charity and none of it
         passed through us. <Mark>We also asked people to pledge an amount for each kilometre we rode.</Mark>
       </p>
+      {/* The same four facts at poster size; shown beside the text on wide screens. */}
+      <ul className="p-why__facts" aria-hidden="true">
+        <li><strong>Free legal aid</strong><span>for migrant workers who cannot afford a lawyer</span></li>
+        <li><strong>Registered charity</strong><span>IPC status, UEN 201700430E</span></li>
+        <li><strong>Giving.sg</strong><span>every dollar went straight to the charity</span></li>
+        <li><strong>Per-km pledges</strong><span>for every kilometre we rode</span></li>
+      </ul>
     </div>
   );
 }
@@ -225,6 +232,15 @@ export function Goals({ active, headingId }: PanelProps) {
           <span>Our</span> <span>goals</span>
         </h2>
         <p className="body">We set these on 26 March, after our call with ProBono SG.</p>
+        <figure className="paste p-goals__photo">
+          <img
+            src={img("stretching.jpg")}
+            alt="Four of us in helmets stretching at a park fitness corner before a ride"
+            width={1600}
+            height={1200}
+          />
+          <figcaption>Warming up before a ride</figcaption>
+        </figure>
       </div>
       <aside className="board p-goals__board" aria-label="Our targets">
         <div>

@@ -1,0 +1,464 @@
+/* Full-screen sections on laptops and projectors.
+   Beside the spine each section is about 3:2, so its board is 1920px wide and roughly
+   1350-1500px tall (--wall-h). These rules recompose the slides, which were drawn for a
+   1920 x 880 board, for that shape: larger type, photos sized to the height and kept
+   inside their section, headings at the top. The phone layout does not use them. */
+
+/* ------------------------------ 00 title ------------------------------ */
+.page .p-title {
+  grid-template-columns: 1fr 640px;
+}
+.page .p-title__wall {
+  display: flex;
+  flex-direction: column;
+  padding: 120px var(--m) 96px;
+}
+.page .p-title__lede {
+  margin-top: 48px;
+  font-size: 36px;
+  max-width: 30ch;
+}
+/* the whole photo stays in view: sized to the height left, set in the flow */
+.page .p-title__photo {
+  position: static;
+  align-self: flex-end;
+  margin-top: auto;
+  width: auto;
+  height: calc(var(--wall-h) - 780px);
+  max-width: 100%;
+  aspect-ratio: 4 / 3;
+  transform: rotate(2deg);
+}
+.page .p-title__board {
+  gap: 48px;
+  padding: 72px 64px;
+}
+.page .p-title__board .tile {
+  width: 84px;
+  height: 120px;
+  font-size: 88px;
+}
+.page .p-title__board .tile.narrow {
+  width: 42px;
+}
+.page .p-title__board .credits {
+  font-size: 26px;
+}
+.page .p-title__board .credits th,
+.page .p-title__board .credits td {
+  padding: 12px 0;
+}
+.page .p-title__credit p {
+  font-size: 26px;
+}
+
+/* ------------------------------ 01 skyline ------------------------------ */
+/* heading across the top, the sentence under it, the four problems as tiles, the close */
+.page .p-skyline {
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto auto 1fr auto;
+  gap: 32px 20px;
+  padding: 96px var(--m) 80px;
+}
+.page .p-skyline__slogan {
+  display: contents;
+}
+.page .p-skyline__slogan .h-panel {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  font-size: 150px;
+}
+.page .p-skyline__slogan .statement {
+  grid-column: 1 / 4;
+  grid-row: 2;
+  max-width: 54ch;
+  font-size: 36px;
+}
+.page .p-skyline__issues {
+  grid-column: 1 / -1;
+  grid-row: 3;
+  padding: 24px 0 0;
+  background: none;
+  color: var(--color-on-panel);
+}
+.page .p-skyline__issues .label {
+  margin-bottom: 20px;
+  color: var(--color-on-panel);
+  font-size: 34px;
+}
+.page .p-skyline__issues ul {
+  flex: 1;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.page .p-skyline__issues li {
+  display: flex;
+  align-items: flex-end;
+  padding: 36px 32px;
+  background: var(--color-seam);
+  font-size: 60px;
+}
+.page .p-skyline__close {
+  grid-row: 4;
+  font-size: 44px;
+  padding-top: 16px;
+}
+
+/* ------------------------------ 02 why ------------------------------ */
+/* heading across the top; the story on the left, its four facts at poster size on the right */
+.page .p-why {
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr;
+  column-gap: 96px;
+  padding: 104px var(--m) 96px;
+}
+.page .p-why .seam {
+  display: none;
+}
+.page .p-why .h-panel {
+  grid-column: 1 / -1;
+  padding: 0;
+  font-size: 150px;
+}
+.page .p-why .h-panel > span {
+  display: inline;
+}
+.page .p-why__text {
+  align-self: center;
+  padding: 0;
+  columns: 1;
+  font-size: 36px;
+  line-height: 1.55;
+}
+.page .p-why__facts {
+  display: grid;
+  align-content: center;
+  gap: 36px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.page .p-why__facts li {
+  display: grid;
+  gap: 8px;
+  padding-top: 28px;
+  border-top: 4px solid var(--color-seam);
+}
+.page .p-why__facts strong {
+  font-weight: 850;
+  font-stretch: 104%;
+  font-size: 72px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.page .p-why__facts span {
+  font-weight: 600;
+  font-size: 32px;
+}
+
+/* ------------------------------ 03 probono ------------------------------ */
+/* heading and notes across the top; the call photo as a band below, cropped top and
+   bottom so all five stay in */
+.page .p-probono {
+  grid-template-columns: 1fr;
+  grid-template-rows: auto minmax(0, 1fr);
+}
+.page .p-probono__caption {
+  grid-row: 1;
+  display: grid;
+  grid-template-columns: 900px 1fr;
+  align-items: center;
+  gap: 64px;
+  padding: 96px var(--m) 72px;
+}
+.page .p-probono__list {
+  gap: 24px;
+}
+.page .p-probono__list li {
+  font-size: 34px;
+}
+.page .p-probono__photo {
+  grid-row: 2;
+  justify-content: stretch;
+  min-height: 0;
+}
+.page .p-probono__frame {
+  flex: 1;
+  min-height: 0;
+  aspect-ratio: auto;
+}
+.page .p-probono__frame img {
+  object-position: 50% 55%;
+}
+.page .p-probono__photo figcaption {
+  max-width: none;
+  padding: 24px var(--m);
+  font-size: 30px;
+}
+
+/* ------------------------------ 04 roles ------------------------------ */
+.page .p-roles {
+  padding: 96px var(--m) 80px;
+  row-gap: 56px;
+}
+.page .p-roles__intro .body {
+  font-size: 34px;
+  max-width: 36ch;
+}
+.page .role,
+.page .role__tab {
+  flex-basis: 132px;
+}
+.page .role__tab span {
+  font-size: 44px;
+}
+.page .role__body {
+  width: 1120px;
+  padding-bottom: 56px;
+}
+.page .role__role {
+  font-size: 96px;
+  margin-bottom: 24px;
+}
+.page .role__body .body {
+  font-size: 36px;
+}
+
+/* ------------------------------ 05 goals ------------------------------ */
+.page .p-goals__head {
+  justify-content: flex-start;
+  gap: 28px;
+  padding: 96px var(--m) 96px;
+}
+.page .p-goals__head .body {
+  font-size: 34px;
+}
+.page .p-goals__photo {
+  margin-top: auto;
+}
+.page .p-goals__photo img {
+  max-height: calc(var(--wall-h) - 720px);
+  object-fit: cover;
+}
+.page .p-goals__board {
+  gap: 56px;
+}
+.page .p-goals__board .credits {
+  font-size: 34px;
+}
+.page .p-goals__board .credits th,
+.page .p-goals__board .credits td {
+  padding: 22px 0;
+}
+.page .p-goals__board .tile-caption {
+  font-size: 32px;
+}
+
+/* ------------------------------ 06 mwlc ------------------------------ */
+.page .p-mwlc__text .body,
+.page .p-mwlc__list li {
+  font-size: 30px;
+}
+.page .p-mwlc__text .statement {
+  font-size: 40px;
+}
+
+/* ------------------------------ 07 give ------------------------------ */
+.page .p-give {
+  padding: 96px var(--m) 80px;
+}
+.page .p-give__copy .label {
+  font-size: 44px;
+}
+.page .p-give__copy .body {
+  font-size: 32px;
+}
+.page .dial {
+  gap: 28px;
+  padding: 64px 56px;
+}
+.page .dial__head {
+  font-size: 44px;
+}
+.page .dial .body,
+.page .dial__try,
+.page .dial__per {
+  font-size: 32px;
+}
+.page .dial__amount {
+  font-size: 80px;
+}
+
+/* ------------------------------ 08 people ------------------------------ */
+.page .p-people {
+  padding: 96px var(--m) 80px;
+}
+.page .p-people__what {
+  font-size: 76px;
+}
+.page .p-people__list li .body {
+  font-size: 34px;
+}
+.page .p-people__quote .statement {
+  font-size: 52px;
+  line-height: 1.25;
+}
+
+/* ------------------------------ 09 online ------------------------------ */
+.page .p-online {
+  padding: 96px var(--m) 80px;
+  grid-template-columns: repeat(3, 1fr) 720px;
+}
+.page .p-online__word {
+  font-size: 96px;
+}
+.page .p-online__cell .body {
+  font-size: 32px;
+}
+/* the three posts share the column's height instead of bunching at the top */
+.page .p-online__pile {
+  margin-left: 48px;
+}
+.page .p-online__post--1 {
+  left: 0;
+  top: 0;
+  width: 56%;
+  height: 58%;
+}
+.page .p-online__post--2 {
+  right: 0;
+  top: 36%;
+  width: 72%;
+}
+.page .p-online__post--3 {
+  left: 18%;
+  right: auto;
+  bottom: 0;
+  width: 46%;
+  height: 40%;
+}
+
+/* ------------------------------ 10 ride ------------------------------ */
+.page .p-ride {
+  grid-template-columns: 1fr 500px;
+  padding-top: 96px;
+}
+.page .p-ride__text .body {
+  font-size: 34px;
+}
+.page .p-ride__board {
+  gap: 56px;
+}
+.page .p-ride__board .tile {
+  width: 76px;
+  height: 108px;
+  font-size: 80px;
+}
+.page .p-ride__board .tile.narrow {
+  width: 40px;
+}
+.page .p-ride__board .tile-caption {
+  font-size: 32px;
+}
+
+/* ------------------------------ 11 plan ------------------------------ */
+.page .p-plan {
+  padding-top: 96px;
+}
+.page .p-plan__text {
+  padding-bottom: 96px;
+}
+.page .p-plan__events .label {
+  font-size: 48px;
+}
+.page .p-plan__events .body {
+  font-size: 34px;
+}
+.page .p-plan__text > .statement {
+  font-size: 48px;
+}
+/* the photo stays inside the section, tilted only a little */
+.page .p-plan__photo {
+  align-self: center;
+  height: min(calc(var(--wall-h) - 280px), 1100px);
+  margin-top: 0;
+  transform: rotate(-3deg);
+}
+
+/* ------------------------------ 12 result ------------------------------ */
+.page .p-result {
+  grid-template-rows: auto 1fr auto auto auto 1fr;
+  padding: 96px var(--m) 0;
+}
+.page .p-result__figure {
+  font-size: 440px;
+}
+/* under the bar, so the larger figure has the full width */
+.page .p-result__caption {
+  grid-row: 5;
+  grid-column: 1 / 3;
+  justify-self: start;
+  max-width: 60ch;
+  margin: 72px 0 0;
+  font-size: 34px;
+}
+.page .p-result__bar {
+  margin-top: 120px;
+}
+.page .p-result__tick span {
+  font-size: 28px;
+}
+
+/* ------------------------------ 13 learnt ------------------------------ */
+.page .p-learnt {
+  display: flex;
+  flex-direction: column;
+  padding: 104px var(--m) 96px;
+}
+.page .p-learnt__head .h-panel {
+  font-size: 150px;
+}
+.page .p-learnt__head .h-panel > span {
+  display: inline;
+}
+.page .p-learnt__list {
+  flex: 1;
+  align-content: center;
+}
+.page .p-learnt__item {
+  grid-template-columns: 440px 1fr;
+  gap: 56px;
+  padding: 40px 0;
+}
+.page .p-learnt__item .label {
+  font-size: 44px;
+}
+.page .p-learnt__item .body {
+  font-size: 36px;
+}
+
+/* ------------------------------ 14 questions ------------------------------ */
+.page .p-questions__top,
+.page .p-questions__bottom {
+  font-size: 260px;
+}
+.page .p-questions__top {
+  top: 72px;
+}
+.page .p-questions__bottom {
+  bottom: 72px;
+}
+.page .p-questions__middle {
+  gap: 48px;
+}
+.page .p-questions__middle .statement {
+  font-size: 52px;
+  max-width: 34ch;
+}
+.page .p-questions__thanks {
+  font-size: 34px;
+}
+.page .p-questions__actions .btn {
+  min-height: 104px;
+  font-size: 34px;
+}

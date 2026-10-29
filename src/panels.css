@@ -176,6 +176,10 @@
   line-height: 1.45;
   hyphens: manual;
 }
+/* only the full-screen layout has room for these (screen.css) */
+.p-why__facts {
+  display: none;
+}
 .hl {
   color: inherit;
   padding: 0 0.12em;
@@ -373,6 +377,13 @@
 }
 .p-goals__head .body {
   max-width: 30ch;
+}
+.p-goals__photo {
+  margin: 0;
+}
+.p-goals__photo img {
+  aspect-ratio: 4 / 3;
+  height: auto;
 }
 .p-goals__board {
   display: flex;
@@ -1459,7 +1470,14 @@
   .p-goals__head .h-panel > span {
     display: inline;
   }
-  .p-goals__board {
+  .p-goals__photo {
+  margin: 0;
+}
+.p-goals__photo img {
+  aspect-ratio: 4 / 3;
+  height: auto;
+}
+.p-goals__board {
     padding: 28px var(--m);
     gap: 20px;
   }

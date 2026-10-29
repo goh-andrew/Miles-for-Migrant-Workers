@@ -42,6 +42,7 @@ const LAST = PANELS.length - 1;
 const firstOfStage = (s: number) => PANELS.findIndex((p) => p.stage === s);
 const STAGE_STARTS = STAGES.map((_, s) => firstOfStage(s));
 const ATTRACT_MS = 3 * 60 * 1000;
+const GLIDE_MS = 750; // how long one section-to-section glide takes
 const HEAD_H = 0; // wide screens have no top bar; the spine carries the stages
 const NARROW_HEAD_H = 80; // sticky stage bar on phones
 const LOGO = `${import.meta.env.BASE_URL}logo.svg`;
@@ -77,19 +78,36 @@ export function Deck() {
   // Read before the address is rewritten to follow the scroll.
   const startAt = useRef(readHash());
 
+  const glide = useRef(0);
   const scrollToSection = useCallback(
     (n: number, behavior: ScrollBehavior) => {
       const el = sections.current[n];
       if (!el) return;
       const top = el.getBoundingClientRect().top + window.scrollY - headH;
-      lockUntil.current = Date.now() + (behavior === "smooth" ? 900 : 50);
+      lockUntil.current = Date.now() + (behavior === "smooth" ? GLIDE_MS + 150 : 50);
       setIndex(n);
-      window.scrollTo({ top, behavior });
-      // If the browser skips or stalls the smooth scroll, land there anyway.
-      if (behavior === "smooth")
-        window.setTimeout(() => {
-          if (Math.abs(window.scrollY - top) > 4) window.scrollTo({ top, behavior: "auto" });
-        }, 1000);
+      cancelAnimationFrame(glide.current);
+      if (behavior !== "smooth") {
+        window.scrollTo(0, top);
+        return;
+      }
+      // Our own eased glide, so every jump (keys, clicker, wheel, touchpad) moves the same way.
+      const from = window.scrollY;
+      const t0 = performance.now();
+      const ease = (x: number) => (x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2);
+      const tick = (now: number) => {
+        const p = Math.min(1, (now - t0) / GLIDE_MS);
+        window.scrollTo(0, from + (top - from) * ease(p));
+        if (p < 1) glide.current = requestAnimationFrame(tick);
+      };
+      glide.current = requestAnimationFrame(tick);
+      // If the browser stalls the animation (a hidden tab), land there anyway.
+      window.setTimeout(() => {
+        if (Math.abs(window.scrollY - top) > 4) {
+          cancelAnimationFrame(glide.current);
+          window.scrollTo(0, top);
+        }
+      }, GLIDE_MS + 400);
     },
     [headH],
   );
@@ -113,6 +131,36 @@ export function Deck() {
     if (!narrow && step > 0) setSteps((s) => ({ ...s, [index]: step - 1 }));
     else go(index - 1, true);
   }, [narrow, step, index, go]);
+
+  // Wheel and touchpad: one gesture moves one section, with the same glide as Next.
+  const moveRef = useRef({ forward, back });
+  moveRef.current = { forward, back };
+  useEffect(() => {
+    if (narrow || notice) return;
+    let acc = 0;
+    let lastAt = 0;
+    let quietUntil = 0;
+    const onWheel = (e: WheelEvent) => {
+      if (e.ctrlKey || Math.abs(e.deltaX) > Math.abs(e.deltaY)) return; // pinch zoom, sideways swipes
+      e.preventDefault();
+      const now = performance.now();
+      if (now - lastAt > 200) acc = 0; // a fresh gesture
+      lastAt = now;
+      // Swallow the rest of the gesture, including a touchpad's momentum, until it settles.
+      if (now < quietUntil) {
+        quietUntil = Math.max(quietUntil, now + 200);
+        return;
+      }
+      acc += e.deltaMode === 1 ? e.deltaY * 16 : e.deltaY;
+      if (Math.abs(acc) < 30) return;
+      if (acc > 0) moveRef.current.forward();
+      else moveRef.current.back();
+      acc = 0;
+      quietUntil = now + GLIDE_MS;
+    };
+    window.addEventListener("wheel", onWheel, { passive: false });
+    return () => window.removeEventListener("wheel", onWheel);
+  }, [narrow, notice]);
 
   // The section whose top has passed a line a third of the way down the screen is current.
   useEffect(() => {

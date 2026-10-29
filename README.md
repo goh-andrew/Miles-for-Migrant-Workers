@@ -11,7 +11,7 @@ npm run build
 
 Then either run `npm run preview` and open http://localhost:4173, or double-click `dist/index.html`. It works offline.
 
-It is one scrolling page. On a laptop or projector, the route down the left shows the five CAS stages, and the rider marks how far through the story you are. Visitors can simply scroll; when presenting, use the keys or a clicker to jump section by section.
+It is one scrolling page. On a laptop or projector, the route down the left shows the five CAS stages, and the rider marks how far through the story you are. Each section fills the screen, and a mouse-wheel notch or a touchpad swipe glides to the next one, just like the keys or a clicker.
 
 | Key | Does |
 |---|---|

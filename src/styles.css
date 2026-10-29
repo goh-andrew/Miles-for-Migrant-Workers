@@ -86,11 +86,7 @@ html::-webkit-scrollbar {
   min-height: 100svh;
   background: var(--color-walkway);
 }
-/* Scrolling settles on one section at a time, each the size of the screen. */
-html:has(.page) {
-  scroll-snap-type: y proximity;
-  scroll-padding-top: var(--head-h, 64px);
-}
+
 .page__body {
   display: grid;
   grid-template-columns: var(--spine-w) 1fr;
@@ -104,7 +100,6 @@ html:has(.page) {
 .sect {
   position: relative;
   height: calc(var(--wall-h) * var(--k));
-  scroll-snap-align: start;
 }
 .sect > .panel {
   transform: scale(var(--k));
