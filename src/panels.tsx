@@ -79,6 +79,13 @@ export function Title({ active, headingId }: PanelProps) {
 }
 
 /* 01 ----------------------------------------------------------------- */
+const PROBLEMS = [
+  ["Unpaid wages", "Working for weeks or months without being paid what was agreed."],
+  ["Wrongful dismissal", "Losing a job unfairly, and often the work permit."],
+  ["Unsafe conditions", "Getting hurt at work and having to fight for treatment or compensation."],
+  ["Contract disputes", "Pay or terms that change after arrival, in a contract they may not be able to read."],
+] as const;
+
 export function Skyline({ headingId }: PanelProps) {
   return (
     <div className="p-skyline">
@@ -91,16 +98,17 @@ export function Skyline({ headingId }: PanelProps) {
           <span>The people behind</span> <span>the skyline</span>
         </h2>
       </div>
-      <div className="board p-skyline__issues" data-enter style={i(1)}>
-        <p className="label">Problems at work</p>
-        <ul>
-          <li>Unpaid wages</li>
-          <li>Wrongful dismissal</li>
-          <li>Unsafe conditions</li>
-          <li>Contract disputes</li>
-        </ul>
+      <div className="p-skyline__issues" data-enter style={i(1)}>
+        <ol aria-label="Problems at work">
+          {PROBLEMS.map(([word, what]) => (
+            <li key={word}>
+              <b className="p-skyline__word">{word}</b>
+              <p className="p-skyline__what">{what}</p>
+            </li>
+          ))}
+        </ol>
       </div>
-      <p className="statement p-skyline__close">
+      <p className="p-skyline__close" data-enter style={i(2)}>
         Most migrant workers can't afford a lawyer when this happens.
       </p>
     </div>

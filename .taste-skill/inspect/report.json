@@ -1,6 +1,6 @@
 {
  "url": "http://localhost:4173/?attract=off",
- "at": "2026-10-29T15:35:03.412Z",
+ "at": "2026-10-30T01:46:04.497Z",
  "allow": [],
  "viewports": [
   {
@@ -38,7 +38,7 @@
     "page": {
      "height": 13604,
      "screens": 15.1,
-     "words": 1007,
+     "words": 1053,
      "img": 18,
      "video": 1,
      "canvas": 0,
@@ -134,7 +134,7 @@
       "align": "left",
       "position": "right",
       "widthRatio": 0.04,
-      "top": 151,
+      "top": 156,
       "tag": "span",
       "kind": "heading"
      },
@@ -155,7 +155,7 @@
       "align": "left",
       "position": "right",
       "widthRatio": 0.03,
-      "top": 151,
+      "top": 156,
       "tag": "span",
       "kind": "heading"
      },
@@ -176,7 +176,7 @@
       "align": "left",
       "position": "right",
       "widthRatio": 0.02,
-      "top": 151,
+      "top": 156,
       "tag": "span",
       "kind": "heading"
      },
@@ -197,7 +197,7 @@
       "align": "left",
       "position": "right",
       "widthRatio": 0.03,
-      "top": 151,
+      "top": 156,
       "tag": "span",
       "kind": "heading"
      },
@@ -218,7 +218,7 @@
       "align": "left",
       "position": "right",
       "widthRatio": 0.04,
-      "top": 151,
+      "top": 156,
       "tag": "span",
       "kind": "heading"
      },
@@ -239,7 +239,7 @@
       "align": "left",
       "position": "right",
       "widthRatio": 0.21,
-      "top": 229,
+      "top": 234,
       "tag": "p",
       "kind": "statement"
      },
@@ -281,7 +281,7 @@
       "align": "left",
       "position": "right",
       "widthRatio": 0.04,
-      "top": 280,
+      "top": 284,
       "tag": "span",
       "kind": "heading"
      },
@@ -302,7 +302,7 @@
       "align": "left",
       "position": "right",
       "widthRatio": 0.04,
-      "top": 280,
+      "top": 284,
       "tag": "span",
       "kind": "heading"
      },
@@ -323,7 +323,7 @@
       "align": "left",
       "position": "right",
       "widthRatio": 0.03,
-      "top": 280,
+      "top": 284,
       "tag": "span",
       "kind": "heading"
      },
@@ -344,7 +344,7 @@
       "align": "left",
       "position": "right",
       "widthRatio": 0.04,
-      "top": 280,
+      "top": 284,
       "tag": "span",
       "kind": "heading"
      },
@@ -365,7 +365,7 @@
       "align": "left",
       "position": "right",
       "widthRatio": 0.21,
-      "top": 358,
+      "top": 362,
       "tag": "p",
       "kind": "statement"
      },
@@ -386,7 +386,7 @@
       "align": "left",
       "position": "right",
       "widthRatio": 0.16,
-      "top": 677,
+      "top": 673,
       "tag": "p",
       "kind": "statement"
      },
@@ -395,8 +395,8 @@
       "words": 5,
       "chars": 29,
       "lines": 2,
-      "size": 150,
-      "vw": 10.4,
+      "size": 136,
+      "vw": 9.4,
       "font": "Archivo Variable",
       "weight": 850,
       "tracking": -0.02,
@@ -405,9 +405,9 @@
       "italic": false,
       "mono": false,
       "align": "left",
-      "position": "center",
-      "widthRatio": 0.68,
-      "top": 958,
+      "position": "right",
+      "widthRatio": 0.75,
+      "top": 948,
       "tag": "h2",
       "kind": "heading"
      },
@@ -428,50 +428,8 @@
       "align": "left",
       "position": "center",
       "widthRatio": 0.47,
-      "top": 1142,
+      "top": 1113,
       "tag": "p",
-      "kind": "statement"
-     },
-     {
-      "text": "Problems at work",
-      "words": 3,
-      "chars": 16,
-      "lines": 1,
-      "size": 34,
-      "vw": 2.4,
-      "font": "Archivo Variable",
-      "weight": 700,
-      "tracking": 0,
-      "leading": 1.15,
-      "upper": false,
-      "italic": false,
-      "mono": false,
-      "align": "left",
-      "position": "center",
-      "widthRatio": 0.68,
-      "top": 1232,
-      "tag": "p",
-      "kind": "statement"
-     },
-     {
-      "text": "Unpaid wages",
-      "words": 2,
-      "chars": 12,
-      "lines": 2,
-      "size": 60,
-      "vw": 4.2,
-      "font": "Archivo Variable",
-      "weight": 800,
-      "tracking": -0.02,
-      "leading": 0.95,
-      "upper": false,
-      "italic": false,
-      "mono": false,
-      "align": "left",
-      "position": "left",
-      "widthRatio": 0.16,
-      "top": 1268,
-      "tag": "li",
       "kind": "statement"
      },
      {
@@ -479,83 +437,104 @@
       "words": 2,
       "chars": 18,
       "lines": 2,
-      "size": 60,
-      "vw": 4.2,
+      "size": 54,
+      "vw": 3.8,
       "font": "Archivo Variable",
-      "weight": 800,
+      "weight": 850,
       "tracking": -0.02,
-      "leading": 0.95,
-      "upper": false,
-      "italic": false,
-      "mono": false,
-      "align": "left",
-      "position": "center",
-      "widthRatio": 0.16,
-      "top": 1268,
-      "tag": "li",
-      "kind": "statement"
-     },
-     {
-      "text": "Unsafe conditions",
-      "words": 2,
-      "chars": 17,
-      "lines": 2,
-      "size": 60,
-      "vw": 4.2,
-      "font": "Archivo Variable",
-      "weight": 800,
-      "tracking": -0.02,
-      "leading": 0.95,
+      "leading": 0.98,
       "upper": false,
       "italic": false,
       "mono": false,
       "align": "left",
       "position": "right",
-      "widthRatio": 0.16,
-      "top": 1268,
-      "tag": "li",
+      "widthRatio": 0.21,
+      "top": 1339,
+      "tag": "b",
       "kind": "statement"
      },
      {
-      "text": "Contract disputes",
+      "text": "Unpaid wages",
       "words": 2,
-      "chars": 17,
-      "lines": 2,
-      "size": 60,
-      "vw": 4.2,
+      "chars": 12,
+      "lines": 1,
+      "size": 54,
+      "vw": 3.8,
       "font": "Archivo Variable",
-      "weight": 800,
+      "weight": 850,
       "tracking": -0.02,
-      "leading": 0.95,
+      "leading": 0.98,
       "upper": false,
       "italic": false,
       "mono": false,
       "align": "left",
-      "position": "right",
-      "widthRatio": 0.16,
-      "top": 1268,
-      "tag": "li",
+      "position": "left",
+      "widthRatio": 0.21,
+      "top": 1371,
+      "tag": "b",
       "kind": "statement"
      },
      {
       "text": "Most migrant workers can't afford a lawyer when this happens.",
       "words": 10,
       "chars": 61,
-      "lines": 1,
-      "size": 44,
-      "vw": 3.1,
+      "lines": 6,
+      "size": 78,
+      "vw": 5.4,
       "font": "Archivo Variable",
-      "weight": 600,
-      "tracking": 0,
-      "leading": 1.3,
+      "weight": 850,
+      "tracking": -0.02,
+      "leading": 1.02,
       "upper": false,
       "italic": false,
       "mono": false,
       "align": "left",
       "position": "right",
-      "widthRatio": 0.75,
-      "top": 1708,
+      "widthRatio": 0.23,
+      "top": 1475,
       "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "Unsafe conditions",
+      "words": 2,
+      "chars": 17,
+      "lines": 1,
+      "size": 54,
+      "vw": 3.8,
+      "font": "Archivo Variable",
+      "weight": 850,
+      "tracking": -0.02,
+      "leading": 0.98,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.21,
+      "top": 1659,
+      "tag": "b",
+      "kind": "statement"
+     },
+     {
+      "text": "Contract disputes",
+      "words": 2,
+      "chars": 17,
+      "lines": 1,
+      "size": 54,
+      "vw": 3.8,
+      "font": "Archivo Variable",
+      "weight": 850,
+      "tracking": -0.02,
+      "leading": 0.98,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.21,
+      "top": 1659,
+      "tag": "b",
       "kind": "statement"
      },
      {
@@ -596,7 +575,7 @@
       "align": "left",
       "position": "right",
       "widthRatio": 0.35,
-      "top": 2089,
+      "top": 2091,
       "tag": "strong",
       "kind": "statement"
      },
@@ -659,7 +638,7 @@
       "align": "left",
       "position": "right",
       "widthRatio": 0.35,
-      "top": 2324,
+      "top": 2321,
       "tag": "strong",
       "kind": "statement"
      },
@@ -680,7 +659,7 @@
       "align": "left",
       "position": "right",
       "widthRatio": 0.35,
-      "top": 2441,
+      "top": 2437,
       "tag": "strong",
       "kind": "statement"
      },
@@ -935,13 +914,34 @@
       "top": 4269,
       "tag": "p",
       "kind": "statement"
+     },
+     {
+      "text": "Fundraising",
+      "words": 1,
+      "chars": 11,
+      "lines": 1,
+      "size": 88,
+      "vw": 6.1,
+      "font": "Archivo Variable",
+      "weight": 850,
+      "tracking": -0.02,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.42,
+      "top": 4305,
+      "tag": "p",
+      "kind": "statement"
      }
     ],
     "headingSummary": {
-     "count": 130,
+     "count": 129,
      "maxLines": 11,
      "over2Lines": 0,
-     "statements": 67,
+     "statements": 66,
      "centered": 8,
      "medianWords": 2,
      "mixedFontHeadings": 0
@@ -961,6 +961,7 @@
       18,
       22,
       26,
+      27,
       28,
       30,
       32,
@@ -970,22 +971,24 @@
       44,
       48,
       52,
-      60,
+      54,
       64,
       72,
       76,
+      78,
       80,
       84,
       88,
       96,
       104,
       128,
+      136,
       150,
       176,
       260,
       440
      ],
-     "sizeCount": 28,
+     "sizeCount": 31,
      "notLoaded": [],
      "body": {
       "font": "Archivo Variable",
@@ -1064,11 +1067,11 @@
      "textColors": [
       {
        "color": "#ffffff",
-       "share": 0.75
+       "share": 0.76
       },
       {
        "color": "#141414",
-       "share": 0.19
+       "share": 0.18
       },
       {
        "color": "#a32135",
@@ -1131,13 +1134,7 @@
        "count": 4,
        "iconTopped": false,
        "rounded": false,
-       "top": 1268
-      },
-      {
-       "count": 4,
-       "iconTopped": false,
-       "rounded": false,
-       "top": 2069
+       "top": 1197
       }
      ]
     },
@@ -1195,18 +1192,18 @@
       "tag": "div",
       "top": 900,
       "height": 900,
-      "words": 49,
+      "words": 96,
       "media": 0,
       "middle": 0,
       "heading": {
        "text": "The people behind",
-       "size": 150,
+       "size": 136,
        "tag": "h2"
       },
       "left": 326,
-      "right": 192,
+      "right": 42,
       "textLeft": 326,
-      "textRight": 192,
+      "textRight": 42,
       "fullBleed": false,
       "footer": false,
       "hero": false,
@@ -1526,7 +1523,7 @@
     "edges": [
      {
       "x": 326,
-      "n": 29
+      "n": 28
      },
      {
       "x": 1118,
@@ -1554,6 +1551,10 @@
      },
      {
       "x": 893,
+      "n": 1
+     },
+     {
+      "x": 1078,
       "n": 1
      },
      {
@@ -1585,20 +1586,20 @@
    "filled": [
     0.94,
     0.97,
+    0.99,
+    0.99,
+    0.99,
+    0.99,
     1,
     0.99,
     0.99,
     0.99,
     0.99,
-    0.99,
-    1,
-    0.99,
-    0.99,
-    0.99
+    1
    ],
    "motion": {
-    "elements": 189,
-    "css": 189,
+    "elements": 187,
+    "css": 187,
     "transitions": 0,
     "scripted": 0,
     "videos": 1,
@@ -1610,9 +1611,9 @@
      "h": 1024
     },
     "page": {
-     "height": 14900,
-     "screens": 14.6,
-     "words": 911,
+     "height": 15160,
+     "screens": 14.8,
+     "words": 957,
      "img": 17,
      "video": 1,
      "canvas": 0,
@@ -1897,7 +1898,7 @@
       "align": "left",
       "position": "center",
       "widthRatio": 0.9,
-      "top": 1681,
+      "top": 1667,
       "tag": "h2",
       "kind": "heading"
      },
@@ -1909,17 +1910,17 @@
       "size": 26,
       "vw": 3.4,
       "font": "Archivo Variable",
-      "weight": 800,
+      "weight": 850,
       "tracking": -0.02,
-      "leading": 0.95,
+      "leading": 0.98,
       "upper": false,
       "italic": false,
       "mono": false,
       "align": "left",
       "position": "center",
-      "widthRatio": 0.89,
-      "top": 1908,
-      "tag": "li",
+      "widthRatio": 0.9,
+      "top": 1864,
+      "tag": "b",
       "kind": "statement"
      },
      {
@@ -1930,17 +1931,17 @@
       "size": 26,
       "vw": 3.4,
       "font": "Archivo Variable",
-      "weight": 800,
+      "weight": 850,
       "tracking": -0.02,
-      "leading": 0.95,
+      "leading": 0.98,
       "upper": false,
       "italic": false,
       "mono": false,
       "align": "left",
       "position": "center",
-      "widthRatio": 0.89,
-      "top": 1938,
-      "tag": "li",
+      "widthRatio": 0.9,
+      "top": 1994,
+      "tag": "b",
       "kind": "statement"
      },
      {
@@ -1951,17 +1952,17 @@
       "size": 26,
       "vw": 3.4,
       "font": "Archivo Variable",
-      "weight": 800,
+      "weight": 850,
       "tracking": -0.02,
-      "leading": 0.95,
+      "leading": 0.98,
       "upper": false,
       "italic": false,
       "mono": false,
       "align": "left",
       "position": "center",
-      "widthRatio": 0.89,
-      "top": 1969,
-      "tag": "li",
+      "widthRatio": 0.9,
+      "top": 2123,
+      "tag": "b",
       "kind": "statement"
      },
      {
@@ -1972,17 +1973,17 @@
       "size": 26,
       "vw": 3.4,
       "font": "Archivo Variable",
-      "weight": 800,
+      "weight": 850,
       "tracking": -0.02,
-      "leading": 0.95,
+      "leading": 0.98,
       "upper": false,
       "italic": false,
       "mono": false,
       "align": "left",
       "position": "center",
-      "widthRatio": 0.89,
-      "top": 2000,
-      "tag": "li",
+      "widthRatio": 0.9,
+      "top": 2252,
+      "tag": "b",
       "kind": "statement"
      },
      {
@@ -2002,7 +2003,7 @@
       "align": "left",
       "position": "left",
       "widthRatio": 0.66,
-      "top": 2216,
+      "top": 2509,
       "tag": "h2",
       "kind": "heading"
      },
@@ -2023,7 +2024,7 @@
       "align": "left",
       "position": "center",
       "widthRatio": 0.95,
-      "top": 2648,
+      "top": 2941,
       "tag": "h2",
       "kind": "heading"
      },
@@ -2044,7 +2045,7 @@
       "align": "left",
       "position": "center",
       "widthRatio": 0.95,
-      "top": 3614,
+      "top": 3908,
       "tag": "h2",
       "kind": "heading"
      },
@@ -2065,7 +2066,7 @@
       "align": "left",
       "position": "center",
       "widthRatio": 0.9,
-      "top": 4403,
+      "top": 4696,
       "tag": "p",
       "kind": "statement"
      },
@@ -2086,7 +2087,7 @@
       "align": "left",
       "position": "center",
       "widthRatio": 0.95,
-      "top": 4888,
+      "top": 5182,
       "tag": "h2",
       "kind": "heading"
      },
@@ -2107,7 +2108,7 @@
       "align": "left",
       "position": "left",
       "widthRatio": 0.07,
-      "top": 5694,
+      "top": 5987,
       "tag": "span",
       "kind": "heading"
      },
@@ -2128,7 +2129,7 @@
       "align": "left",
       "position": "left",
       "widthRatio": 0.07,
-      "top": 5694,
+      "top": 5987,
       "tag": "span",
       "kind": "heading"
      },
@@ -2149,7 +2150,7 @@
       "align": "left",
       "position": "left",
       "widthRatio": 0.07,
-      "top": 5694,
+      "top": 5987,
       "tag": "span",
       "kind": "heading"
      },
@@ -2170,7 +2171,7 @@
       "align": "left",
       "position": "left",
       "widthRatio": 0.07,
-      "top": 5694,
+      "top": 5987,
       "tag": "span",
       "kind": "heading"
      },
@@ -2191,7 +2192,7 @@
       "align": "left",
       "position": "center",
       "widthRatio": 0.95,
-      "top": 6617,
+      "top": 6902,
       "tag": "h2",
       "kind": "heading"
      },
@@ -2212,7 +2213,7 @@
       "align": "left",
       "position": "center",
       "widthRatio": 0.95,
-      "top": 7128,
+      "top": 7405,
       "tag": "h2",
       "kind": "heading"
      },
@@ -2233,7 +2234,7 @@
       "align": "left",
       "position": "left",
       "widthRatio": 0.11,
-      "top": 7872,
+      "top": 8149,
       "tag": "span",
       "kind": "heading"
      },
@@ -2254,7 +2255,7 @@
       "align": "left",
       "position": "left",
       "widthRatio": 0.05,
-      "top": 7995,
+      "top": 8272,
       "tag": "span",
       "kind": "heading"
      },
@@ -2275,7 +2276,7 @@
       "align": "left",
       "position": "left",
       "widthRatio": 0.05,
-      "top": 7995,
+      "top": 8272,
       "tag": "span",
       "kind": "heading"
      },
@@ -2296,7 +2297,7 @@
       "align": "left",
       "position": "left",
       "widthRatio": 0.03,
-      "top": 7995,
+      "top": 8272,
       "tag": "span",
       "kind": "heading"
      },
@@ -2317,7 +2318,7 @@
       "align": "left",
       "position": "left",
       "widthRatio": 0.05,
-      "top": 7995,
+      "top": 8272,
       "tag": "span",
       "kind": "heading"
      },
@@ -2338,7 +2339,7 @@
       "align": "left",
       "position": "left",
       "widthRatio": 0.05,
-      "top": 7995,
+      "top": 8272,
       "tag": "span",
       "kind": "heading"
      },
@@ -2359,7 +2360,7 @@
       "align": "left",
       "position": "center",
       "widthRatio": 0.95,
-      "top": 8214,
+      "top": 8491,
       "tag": "h2",
       "kind": "heading"
      },
@@ -2380,7 +2381,7 @@
       "align": "left",
       "position": "center",
       "widthRatio": 0.95,
-      "top": 8329,
+      "top": 8606,
       "tag": "span",
       "kind": "statement"
      },
@@ -2401,7 +2402,7 @@
       "align": "left",
       "position": "center",
       "widthRatio": 0.95,
-      "top": 8414,
+      "top": 8690,
       "tag": "span",
       "kind": "statement"
      },
@@ -2422,7 +2423,7 @@
       "align": "left",
       "position": "center",
       "widthRatio": 0.95,
-      "top": 8498,
+      "top": 8775,
       "tag": "span",
       "kind": "statement"
      },
@@ -2443,7 +2444,7 @@
       "align": "left",
       "position": "center",
       "widthRatio": 0.95,
-      "top": 8583,
+      "top": 8860,
       "tag": "span",
       "kind": "statement"
      },
@@ -2464,7 +2465,7 @@
       "align": "left",
       "position": "center",
       "widthRatio": 0.89,
-      "top": 8930,
+      "top": 9207,
       "tag": "h2",
       "kind": "heading"
      },
@@ -2485,7 +2486,7 @@
       "align": "left",
       "position": "center",
       "widthRatio": 0.89,
-      "top": 9051,
+      "top": 9328,
       "tag": "p",
       "kind": "statement"
      },
@@ -2506,7 +2507,7 @@
       "align": "left",
       "position": "center",
       "widthRatio": 0.89,
-      "top": 9183,
+      "top": 9460,
       "tag": "p",
       "kind": "statement"
      }
@@ -2614,7 +2615,7 @@
       },
       {
        "color": "#5e1420",
-       "top": 2608,
+       "top": 2901,
        "hsl": {
         "h": 350,
         "s": 0.65,
@@ -2625,15 +2626,15 @@
      "textColors": [
       {
        "color": "#ffffff",
-       "share": 0.72
+       "share": 0.75
       },
       {
        "color": "#141414",
-       "share": 0.22
+       "share": 0.2
       },
       {
        "color": "#a32135",
-       "share": 0.05
+       "share": 0.04
       },
       {
        "color": "#f2f3f1",
@@ -2707,7 +2708,7 @@
      "w": 768,
      "h": 1024
     },
-    "pageH": 14900,
+    "pageH": 15160,
     "margins": {
      "left": 20,
      "right": 20
@@ -2717,7 +2718,7 @@
       "sel": "section.panel.panel--title",
       "tag": "section",
       "top": 80,
-      "height": 1419,
+      "height": 1405,
       "words": 64,
       "media": 1,
       "middle": 0,
@@ -2739,9 +2740,9 @@
      {
       "sel": "section.panel.panel--skyline",
       "tag": "section",
-      "top": 1499,
-      "height": 677,
-      "words": 49,
+      "top": 1485,
+      "height": 985,
+      "words": 96,
       "media": 0,
       "middle": 0,
       "heading": {
@@ -2762,7 +2763,7 @@
      {
       "sel": "section.panel.panel--why",
       "tag": "section",
-      "top": 2176,
+      "top": 2469,
       "height": 432,
       "words": 95,
       "media": 0,
@@ -2785,7 +2786,7 @@
      {
       "sel": "section.panel.panel--probono",
       "tag": "section",
-      "top": 2608,
+      "top": 2901,
       "height": 966,
       "words": 79,
       "media": 1,
@@ -2808,7 +2809,7 @@
      {
       "sel": "section.panel.panel--roles",
       "tag": "section",
-      "top": 3574,
+      "top": 3868,
       "height": 1274,
       "words": 51,
       "media": 1,
@@ -2831,8 +2832,8 @@
      {
       "sel": "section.panel.panel--goals",
       "tag": "section",
-      "top": 4848,
-      "height": 1245,
+      "top": 5142,
+      "height": 1237,
       "words": 45,
       "media": 1,
       "middle": 0,
@@ -2854,8 +2855,8 @@
      {
       "sel": "section.panel.panel--mwlc",
       "tag": "section",
-      "top": 6093,
-      "height": 995,
+      "top": 6378,
+      "height": 986,
       "words": 79,
       "media": 1,
       "middle": 0,
@@ -2877,7 +2878,7 @@
      {
       "sel": "section.panel.panel--give",
       "tag": "section",
-      "top": 7088,
+      "top": 7365,
       "height": 1086,
       "words": 59,
       "media": 1,
@@ -2900,7 +2901,7 @@
      {
       "sel": "section.panel.panel--people",
       "tag": "section",
-      "top": 8174,
+      "top": 8451,
       "height": 694,
       "words": 78,
       "media": 0,
@@ -2923,7 +2924,7 @@
      {
       "sel": "section.panel.panel--online",
       "tag": "section",
-      "top": 8868,
+      "top": 9145,
       "height": 2013,
       "words": 39,
       "media": 4,
@@ -2946,7 +2947,7 @@
      {
       "sel": "section.panel.panel--ride",
       "tag": "section",
-      "top": 10881,
+      "top": 11158,
       "height": 1031,
       "words": 31,
       "media": 1,
@@ -2969,8 +2970,8 @@
      {
       "sel": "section.panel.panel--plan",
       "tag": "section",
-      "top": 11912,
-      "height": 1135,
+      "top": 12188,
+      "height": 1131,
       "words": 53,
       "media": 2,
       "middle": 0,
@@ -2992,7 +2993,7 @@
      {
       "sel": "section.panel.panel--result",
       "tag": "section",
-      "top": 13047,
+      "top": 13320,
       "height": 565,
       "words": 31,
       "media": 0,
@@ -3015,8 +3016,8 @@
      {
       "sel": "section.panel.panel--learnt",
       "tag": "section",
-      "top": 13612,
-      "height": 576,
+      "top": 13885,
+      "height": 564,
       "words": 96,
       "media": 0,
       "middle": 0,
@@ -3038,7 +3039,7 @@
      {
       "sel": "section.panel.panel--questions",
       "tag": "section",
-      "top": 14188,
+      "top": 14448,
       "height": 712,
       "words": 46,
       "media": 0,
@@ -3126,8 +3127,8 @@
     0.99
    ],
    "motion": {
-    "elements": 168,
-    "css": 168,
+    "elements": 115,
+    "css": 115,
     "transitions": 0,
     "scripted": 0,
     "videos": 1,
@@ -3139,9 +3140,9 @@
      "h": 844
     },
     "page": {
-     "height": 13375,
-     "screens": 15.8,
-     "words": 911,
+     "height": 13725,
+     "screens": 16.3,
+     "words": 957,
      "img": 17,
      "video": 1,
      "canvas": 0,
@@ -3426,7 +3427,7 @@
       "align": "left",
       "position": "right",
       "widthRatio": 0.69,
-      "top": 1062,
+      "top": 1048,
       "tag": "p",
       "kind": "statement"
      },
@@ -3447,7 +3448,7 @@
       "align": "left",
       "position": "center",
       "widthRatio": 0.81,
-      "top": 1476,
+      "top": 1462,
       "tag": "h2",
       "kind": "heading"
      },
@@ -3459,17 +3460,17 @@
       "size": 26,
       "vw": 6.7,
       "font": "Archivo Variable",
-      "weight": 800,
+      "weight": 850,
       "tracking": -0.02,
-      "leading": 0.95,
+      "leading": 0.98,
       "upper": false,
       "italic": false,
       "mono": false,
       "align": "left",
       "position": "center",
-      "widthRatio": 0.78,
-      "top": 1651,
-      "tag": "li",
+      "widthRatio": 0.79,
+      "top": 1607,
+      "tag": "b",
       "kind": "statement"
      },
      {
@@ -3480,17 +3481,17 @@
       "size": 26,
       "vw": 6.7,
       "font": "Archivo Variable",
-      "weight": 800,
+      "weight": 850,
       "tracking": -0.02,
-      "leading": 0.95,
+      "leading": 0.98,
       "upper": false,
       "italic": false,
       "mono": false,
       "align": "left",
       "position": "center",
-      "widthRatio": 0.78,
-      "top": 1681,
-      "tag": "li",
+      "widthRatio": 0.79,
+      "top": 1760,
+      "tag": "b",
       "kind": "statement"
      },
      {
@@ -3501,17 +3502,17 @@
       "size": 26,
       "vw": 6.7,
       "font": "Archivo Variable",
-      "weight": 800,
+      "weight": 850,
       "tracking": -0.02,
-      "leading": 0.95,
+      "leading": 0.98,
       "upper": false,
       "italic": false,
       "mono": false,
       "align": "left",
       "position": "center",
-      "widthRatio": 0.78,
-      "top": 1712,
-      "tag": "li",
+      "widthRatio": 0.79,
+      "top": 1912,
+      "tag": "b",
       "kind": "statement"
      },
      {
@@ -3522,17 +3523,38 @@
       "size": 26,
       "vw": 6.7,
       "font": "Archivo Variable",
-      "weight": 800,
+      "weight": 850,
       "tracking": -0.02,
-      "leading": 0.95,
+      "leading": 0.98,
       "upper": false,
       "italic": false,
       "mono": false,
       "align": "left",
       "position": "center",
-      "widthRatio": 0.78,
-      "top": 1743,
-      "tag": "li",
+      "widthRatio": 0.79,
+      "top": 2064,
+      "tag": "b",
+      "kind": "statement"
+     },
+     {
+      "text": "Most migrant workers can't afford a lawyer when this happens.",
+      "words": 10,
+      "chars": 61,
+      "lines": 3,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Archivo Variable",
+      "weight": 850,
+      "tracking": -0.02,
+      "leading": 1.02,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 2176,
+      "tag": "p",
       "kind": "statement"
      },
      {
@@ -3552,7 +3574,7 @@
       "align": "left",
       "position": "left",
       "widthRatio": 0.66,
-      "top": 1986,
+      "top": 2370,
       "tag": "h2",
       "kind": "heading"
      },
@@ -3573,7 +3595,7 @@
       "align": "left",
       "position": "center",
       "widthRatio": 0.9,
-      "top": 2623,
+      "top": 3007,
       "tag": "h2",
       "kind": "heading"
      },
@@ -3594,7 +3616,7 @@
       "align": "left",
       "position": "center",
       "widthRatio": 0.9,
-      "top": 3412,
+      "top": 3796,
       "tag": "h2",
       "kind": "heading"
      },
@@ -3615,7 +3637,7 @@
       "align": "left",
       "position": "center",
       "widthRatio": 0.79,
-      "top": 3888,
+      "top": 4271,
       "tag": "p",
       "kind": "statement"
      },
@@ -3636,7 +3658,7 @@
       "align": "left",
       "position": "center",
       "widthRatio": 0.9,
-      "top": 4398,
+      "top": 4781,
       "tag": "h2",
       "kind": "heading"
      },
@@ -3657,7 +3679,7 @@
       "align": "left",
       "position": "center",
       "widthRatio": 0.84,
-      "top": 4771,
+      "top": 5154,
       "tag": "figcaption",
       "kind": "statement"
      },
@@ -3678,7 +3700,7 @@
       "align": "left",
       "position": "left",
       "widthRatio": 0.13,
-      "top": 4881,
+      "top": 5265,
       "tag": "span",
       "kind": "heading"
      },
@@ -3699,7 +3721,7 @@
       "align": "left",
       "position": "left",
       "widthRatio": 0.13,
-      "top": 4881,
+      "top": 5265,
       "tag": "span",
       "kind": "heading"
      },
@@ -3720,7 +3742,7 @@
       "align": "left",
       "position": "center",
       "widthRatio": 0.13,
-      "top": 4881,
+      "top": 5265,
       "tag": "span",
       "kind": "heading"
      },
@@ -3741,7 +3763,7 @@
       "align": "left",
       "position": "right",
       "widthRatio": 0.13,
-      "top": 4881,
+      "top": 5265,
       "tag": "span",
       "kind": "heading"
      },
@@ -3762,7 +3784,7 @@
       "align": "left",
       "position": "center",
       "widthRatio": 0.9,
-      "top": 5568,
+      "top": 5944,
       "tag": "h2",
       "kind": "heading"
      },
@@ -3783,7 +3805,7 @@
       "align": "left",
       "position": "center",
       "widthRatio": 0.9,
-      "top": 6170,
+      "top": 6537,
       "tag": "h2",
       "kind": "heading"
      },
@@ -3804,7 +3826,7 @@
       "align": "left",
       "position": "left",
       "widthRatio": 0.22,
-      "top": 6799,
+      "top": 7166,
       "tag": "span",
       "kind": "heading"
      },
@@ -3825,7 +3847,7 @@
       "align": "left",
       "position": "left",
       "widthRatio": 0.09,
-      "top": 6922,
+      "top": 7289,
       "tag": "span",
       "kind": "heading"
      },
@@ -3846,7 +3868,7 @@
       "align": "left",
       "position": "left",
       "widthRatio": 0.09,
-      "top": 6922,
+      "top": 7289,
       "tag": "span",
       "kind": "heading"
      },
@@ -3867,7 +3889,7 @@
       "align": "left",
       "position": "center",
       "widthRatio": 0.05,
-      "top": 6922,
+      "top": 7289,
       "tag": "span",
       "kind": "heading"
      },
@@ -3888,7 +3910,7 @@
       "align": "left",
       "position": "center",
       "widthRatio": 0.09,
-      "top": 6922,
+      "top": 7289,
       "tag": "span",
       "kind": "heading"
      },
@@ -3909,7 +3931,7 @@
       "align": "left",
       "position": "right",
       "widthRatio": 0.09,
-      "top": 6922,
+      "top": 7289,
       "tag": "span",
       "kind": "heading"
      },
@@ -3930,7 +3952,7 @@
       "align": "left",
       "position": "center",
       "widthRatio": 0.9,
-      "top": 7141,
+      "top": 7508,
       "tag": "h2",
       "kind": "heading"
      },
@@ -3951,7 +3973,7 @@
       "align": "left",
       "position": "center",
       "widthRatio": 0.9,
-      "top": 7226,
+      "top": 7593,
       "tag": "span",
       "kind": "statement"
      },
@@ -3972,7 +3994,7 @@
       "align": "left",
       "position": "center",
       "widthRatio": 0.9,
-      "top": 7335,
+      "top": 7702,
       "tag": "span",
       "kind": "statement"
      },
@@ -3993,7 +4015,7 @@
       "align": "left",
       "position": "center",
       "widthRatio": 0.9,
-      "top": 7445,
+      "top": 7811,
       "tag": "span",
       "kind": "statement"
      },
@@ -4014,37 +4036,16 @@
       "align": "left",
       "position": "center",
       "widthRatio": 0.9,
-      "top": 7554,
+      "top": 7920,
       "tag": "span",
       "kind": "statement"
-     },
-     {
-      "text": "Going online",
-      "words": 2,
-      "chars": 12,
-      "lines": 1,
-      "size": 33.5,
-      "vw": 8.6,
-      "font": "Archivo Variable",
-      "weight": 850,
-      "tracking": -0.02,
-      "leading": 0.92,
-      "upper": false,
-      "italic": false,
-      "mono": false,
-      "align": "left",
-      "position": "center",
-      "widthRatio": 0.78,
-      "top": 8008,
-      "tag": "h2",
-      "kind": "heading"
      }
     ],
     "headingSummary": {
-     "count": 64,
+     "count": 65,
      "maxLines": 3,
      "over2Lines": 0,
-     "statements": 17,
+     "statements": 18,
      "centered": 1,
      "medianWords": 1,
      "mixedFontHeadings": 0
@@ -4142,7 +4143,7 @@
       },
       {
        "color": "#5e1420",
-       "top": 2583,
+       "top": 2967,
        "hsl": {
         "h": 350,
         "s": 0.65,
@@ -4153,15 +4154,15 @@
      "textColors": [
       {
        "color": "#ffffff",
-       "share": 0.72
+       "share": 0.75
       },
       {
        "color": "#141414",
-       "share": 0.22
+       "share": 0.2
       },
       {
        "color": "#a32135",
-       "share": 0.05
+       "share": 0.04
       },
       {
        "color": "#f2f3f1",
@@ -4216,7 +4217,13 @@
        "count": 4,
        "iconTopped": false,
        "rounded": false,
-       "top": 8076
+       "top": 1561
+      },
+      {
+       "count": 4,
+       "iconTopped": false,
+       "rounded": false,
+       "top": 8443
       }
      ]
     },
@@ -4242,7 +4249,7 @@
      "w": 390,
      "h": 844
     },
-    "pageH": 13375,
+    "pageH": 13725,
     "margins": {
      "left": 20,
      "right": 20
@@ -4252,7 +4259,7 @@
       "sel": "section.panel.panel--title",
       "tag": "section",
       "top": 80,
-      "height": 1160,
+      "height": 1146,
       "words": 64,
       "media": 1,
       "middle": 0,
@@ -4274,9 +4281,9 @@
      {
       "sel": "section.panel.panel--skyline",
       "tag": "section",
-      "top": 1240,
-      "height": 706,
-      "words": 49,
+      "top": 1226,
+      "height": 1104,
+      "words": 96,
       "media": 0,
       "middle": 0,
       "heading": {
@@ -4285,9 +4292,9 @@
        "tag": "h2"
       },
       "left": 20,
-      "right": 34,
+      "right": 43,
       "textLeft": 20,
-      "textRight": 34,
+      "textRight": 43,
       "fullBleed": false,
       "footer": false,
       "hero": false,
@@ -4297,7 +4304,7 @@
      {
       "sel": "section.panel.panel--why",
       "tag": "section",
-      "top": 1946,
+      "top": 2330,
       "height": 637,
       "words": 95,
       "media": 0,
@@ -4320,7 +4327,7 @@
      {
       "sel": "section.panel.panel--probono",
       "tag": "section",
-      "top": 2583,
+      "top": 2967,
       "height": 789,
       "words": 79,
       "media": 1,
@@ -4343,7 +4350,7 @@
      {
       "sel": "section.panel.panel--roles",
       "tag": "section",
-      "top": 3372,
+      "top": 3756,
       "height": 985,
       "words": 51,
       "media": 1,
@@ -4366,8 +4373,8 @@
      {
       "sel": "section.panel.panel--goals",
       "tag": "section",
-      "top": 4358,
-      "height": 923,
+      "top": 4741,
+      "height": 915,
       "words": 45,
       "media": 1,
       "middle": 0,
@@ -4389,8 +4396,8 @@
      {
       "sel": "section.panel.panel--mwlc",
       "tag": "section",
-      "top": 5281,
-      "height": 850,
+      "top": 5656,
+      "height": 841,
       "words": 79,
       "media": 1,
       "middle": 0,
@@ -4400,9 +4407,9 @@
        "tag": "h2"
       },
       "left": 20,
-      "right": 35,
+      "right": 36,
       "textLeft": 20,
-      "textRight": 35,
+      "textRight": 36,
       "fullBleed": true,
       "footer": false,
       "hero": false,
@@ -4412,7 +4419,7 @@
      {
       "sel": "section.panel.panel--give",
       "tag": "section",
-      "top": 6130,
+      "top": 6497,
       "height": 971,
       "words": 59,
       "media": 1,
@@ -4435,7 +4442,7 @@
      {
       "sel": "section.panel.panel--people",
       "tag": "section",
-      "top": 7101,
+      "top": 7468,
       "height": 844,
       "words": 78,
       "media": 0,
@@ -4458,7 +4465,7 @@
      {
       "sel": "section.panel.panel--online",
       "tag": "section",
-      "top": 7946,
+      "top": 8312,
       "height": 1788,
       "words": 39,
       "media": 4,
@@ -4481,7 +4488,7 @@
      {
       "sel": "section.panel.panel--ride",
       "tag": "section",
-      "top": 9733,
+      "top": 10100,
       "height": 818,
       "words": 31,
       "media": 1,
@@ -4504,8 +4511,8 @@
      {
       "sel": "section.panel.panel--plan",
       "tag": "section",
-      "top": 10552,
-      "height": 949,
+      "top": 10918,
+      "height": 945,
       "words": 53,
       "media": 2,
       "middle": 0,
@@ -4527,7 +4534,7 @@
      {
       "sel": "section.panel.panel--result",
       "tag": "section",
-      "top": 11501,
+      "top": 11864,
       "height": 501,
       "words": 31,
       "media": 0,
@@ -4550,8 +4557,8 @@
      {
       "sel": "section.panel.panel--learnt",
       "tag": "section",
-      "top": 12002,
-      "height": 661,
+      "top": 12365,
+      "height": 649,
       "words": 96,
       "media": 0,
       "middle": 0,
@@ -4573,7 +4580,7 @@
      {
       "sel": "section.panel.panel--questions",
       "tag": "section",
-      "top": 12663,
+      "top": 13013,
       "height": 712,
       "words": 46,
       "media": 0,
@@ -4644,6 +4651,13 @@
  ],
  "findings": [
   {
+   "level": "FAIL",
+   "id": "headline-lines",
+   "width": 1440,
+   "message": "1 headline(s) wrap past two lines at 1440px: \"Most migrant workers can't afford a lawyer when \" → 6 lines (10 words, 78px, a paragraph set above 36px)",
+   "fix": "Cut words first (a headline is a title, not a sentence). Then give it a wider measure. Lower the size only as a last resort and never below the scale you chose. A real statement paragraph belongs in a <p> or <blockquote> at 36px or less."
+  },
+  {
    "level": "WARN",
    "id": "statement-length",
    "width": 1440,
@@ -4652,16 +4666,9 @@
   },
   {
    "level": "WARN",
-   "id": "card-rows",
-   "width": 1440,
-   "message": "2 rows of identical boxed cards.",
-   "fix": "Vary the composition; not every section is a card grid."
-  },
-  {
-   "level": "WARN",
    "id": "size-count",
    "width": 1440,
-   "message": "28 different font sizes (15, 16, 18, 22, 26, 28, 30, 32, 34, 36, 40, 44, 48, 52, 60, 64, 72, 76, 80, 84, 88, 96, 104, 128, 150, 176, 260, 440).",
+   "message": "31 different font sizes (15, 16, 18, 22, 26, 27, 28, 30, 32, 34, 36, 40, 44, 48, 52, 54, 64, 72, 76, 78, 80, 84, 88, 96, 104, 128, 136, 150, 176, 260, 440).",
    "fix": "A page needs about five: display, heading, lead, body, small.",
    "alsoAt": [
     768,
@@ -4674,6 +4681,13 @@
    "width": 1440,
    "message": "The margins differ: 88px on the left, 38px on the right, at 1440px.",
    "fix": "Put the navigation and the content on one pair of margins; check for padding on one side only, a scrollbar gutter, or a header on another inset than the page."
+  },
+  {
+   "level": "WARN",
+   "id": "card-rows",
+   "width": 390,
+   "message": "2 rows of identical boxed cards.",
+   "fix": "Vary the composition; not every section is a card grid."
   }
  ],
  "images": [

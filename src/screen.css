@@ -53,12 +53,13 @@
 }
 
 /* ------------------------------ 01 skyline ------------------------------ */
-/* heading across the top, the sentence under it, the four problems as tiles, the close */
+/* heading across the top, the sentence under it; below, the four problems as a numbered 2 x 2
+   on the left and the closing line, the point of the section, large on the right */
 .page .p-skyline {
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: auto auto 1fr auto;
-  gap: 32px 20px;
-  padding: 96px var(--m) 80px;
+  grid-template-columns: 1fr 540px;
+  grid-template-rows: auto auto 1fr;
+  gap: 24px 56px;
+  padding: 80px var(--m) 64px;
 }
 .page .p-skyline__slogan {
   display: contents;
@@ -66,42 +67,43 @@
 .page .p-skyline__slogan .h-panel {
   grid-column: 1 / -1;
   grid-row: 1;
-  font-size: 150px;
+  font-size: 136px;
 }
 .page .p-skyline__slogan .statement {
-  grid-column: 1 / 4;
+  grid-column: 1 / -1;
   grid-row: 2;
   max-width: 54ch;
   font-size: 36px;
 }
 .page .p-skyline__issues {
-  grid-column: 1 / -1;
+  grid-column: 1;
   grid-row: 3;
+  min-height: 0;
   padding: 24px 0 0;
-  background: none;
-  color: var(--color-on-panel);
 }
-.page .p-skyline__issues .label {
-  margin-bottom: 20px;
-  color: var(--color-on-panel);
-  font-size: 34px;
-}
-.page .p-skyline__issues ul {
-  flex: 1;
-  grid-template-columns: repeat(4, 1fr);
+.page .p-skyline__issues ol {
+  height: 100%;
   gap: 20px;
 }
 .page .p-skyline__issues li {
-  display: flex;
-  align-items: flex-end;
-  padding: 36px 32px;
-  background: var(--color-seam);
-  font-size: 60px;
+  gap: 12px;
+  padding: 28px 36px;
+}
+.page .p-skyline__issues li::before {
+  font-size: 30px;
+}
+.page .p-skyline__word {
+  font-size: 54px;
+}
+.page .p-skyline__what {
+  font-size: 27px;
 }
 .page .p-skyline__close {
-  grid-row: 4;
-  font-size: 44px;
-  padding-top: 16px;
+  grid-column: 2;
+  grid-row: 3;
+  align-self: end;
+  padding: 0;
+  font-size: 78px;
 }
 
 /* ------------------------------ 02 why ------------------------------ */
@@ -142,7 +144,6 @@
   display: grid;
   gap: 8px;
   padding-top: 28px;
-  border-top: 4px solid var(--color-seam);
 }
 .page .p-why__facts strong {
   font-weight: 850;

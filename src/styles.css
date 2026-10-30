@@ -451,7 +451,6 @@ html::-webkit-scrollbar {
   text-align: left;
   vertical-align: top;
   padding: 10px 0;
-  border-top: 2px solid var(--color-board-line);
 }
 .credits th {
   font-weight: 500;

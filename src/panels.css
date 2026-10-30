@@ -26,7 +26,6 @@
   align-items: center;
   gap: 24px;
   padding-top: 28px;
-  border-top: 2px solid var(--color-board-line);
 }
 .p-title__credit img {
   width: 96px;
@@ -102,27 +101,44 @@
   justify-content: space-between;
   padding: 48px 48px 52px;
 }
-.p-skyline__issues .label {
-  color: var(--color-panel);
-  margin-bottom: 14px;
-}
-.p-skyline__issues ul {
+/* the four problems as numbered tiles, each saying in a sentence what it means */
+.p-skyline__issues ol {
   margin: 0;
   padding: 0;
   list-style: none;
+  counter-reset: problem;
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 4px;
-}
-.p-skyline__issues ul {
-  gap: 28px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 16px;
 }
 .p-skyline__issues li {
-  font-weight: 800;
+  counter-increment: problem;
+  display: grid;
+  align-content: end;
+  gap: 12px;
+  padding: 28px 32px;
+  background: var(--color-seam);
+}
+/* the list's own numbering, set as 01 to 04 */
+.p-skyline__issues li::before {
+  content: counter(problem, decimal-leading-zero); /* taste-skill-ignore: the numbered layout was the team's choice */
+  font-weight: 850;
+  font-size: 28px;
+  color: rgb(255 255 255 / 0.62);
+}
+.p-skyline__word {
+  font-weight: 850;
   font-stretch: 104%;
-  font-size: 64px;
-  line-height: 0.95;
+  font-size: 48px;
+  line-height: 0.98;
   letter-spacing: -0.02em;
+}
+.p-skyline__what {
+  margin: 0;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.45;
 }
 .p-skyline__sign {
   grid-column: 9 / 13;
@@ -138,10 +154,18 @@
   transform: scale(1.55);
   transform-origin: 50% 0;
 }
+/* the point of the section, set large */
 .p-skyline__close {
   grid-column: 1 / 13;
   grid-row: 3;
+  margin: 0;
   padding-top: 12px;
+  font-weight: 850;
+  font-stretch: 104%;
+  font-size: 56px;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
 }
 .p-skyline__slogan .h-panel {
   font-size: 104px;
@@ -521,7 +545,6 @@
 }
 .p-mwlc__list li {
   padding: 18px 0 0;
-  border-top: 4px solid var(--color-seam);
   font-weight: 600;
   font-size: 28px;
   line-height: 1.35;
@@ -940,7 +963,6 @@
 .p-plan__text > .statement {
   font-size: 36px;
   padding: 28px 0 0;
-  border-top: 4px solid var(--color-seam);
 }
 .p-plan__events {
   display: grid;
@@ -1118,11 +1140,6 @@
   gap: 40px;
   margin: 0;
   padding: 28px 0;
-  border-top: 4px solid var(--color-seam);
-}
-/* each item is the only child of its li, so the last li decides where the closing rule goes */
-.p-learnt__list > li:last-child .p-learnt__item {
-  border-bottom: 4px solid var(--color-seam);
 }
 .p-learnt__item .label {
   font-size: 36px;
@@ -1204,7 +1221,6 @@
 .n-stages li,
 .n-points li {
   padding-top: 20px;
-  border-top: 6px solid var(--color-panel);
 }
 .n-cols {
   display: grid;
@@ -1220,7 +1236,6 @@
   grid-template-columns: 240px 1fr;
   gap: 32px;
   padding: 16px 0;
-  border-top: 3px solid var(--color-board-line);
 }
 .n-timeline strong {
   color: var(--color-panel);
@@ -1478,16 +1493,29 @@
     white-space: normal;
   }
   .p-skyline__issues {
-    padding: 24px 22px;
+    padding: 0;
   }
-  .p-skyline__issues {
-    gap: 16px;
-  }
-  .p-skyline__issues ul {
-    gap: 6px;
+  .p-skyline__issues ol {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    gap: 10px;
   }
   .p-skyline__issues li {
+    gap: 6px;
+    padding: 18px 20px;
+  }
+  .p-skyline__issues li::before {
+    font-size: 15px;
+  }
+  .p-skyline__word {
     font-size: 26px;
+  }
+  .p-skyline__what {
+    font-size: 16px;
+  }
+  .p-skyline__close {
+    padding-top: 8px;
+    font-size: 24px;
   }
   .p-skyline__sign {
     aspect-ratio: 16 / 9;
@@ -1655,7 +1683,6 @@
   .p-mwlc__list li {
     font-size: 17px;
     padding-top: 12px;
-    border-top-width: 3px;
   }
 
   .p-give__copy .label {
@@ -1849,10 +1876,6 @@
     grid-template-columns: 1fr;
     gap: 8px;
     padding: 16px 0;
-    border-top-width: 3px;
-  }
-  .p-learnt__list > li:last-child .p-learnt__item {
-    border-bottom-width: 3px;
   }
   .p-learnt__item .label {
     font-size: 19px;
