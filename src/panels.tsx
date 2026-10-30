@@ -173,9 +173,9 @@ export function ProBono({ headingId }: PanelProps) {
 // Photos are 3:4 crops with the face centred across and about 30% down (img/people).
 const ROLES = [
   { name: "Andrew Goh", photo: "andrew", role: "Fundraising", text: "Set up the Giving.sg campaign and the pledge form, wrote to ProBono SG, and checked the charity's status." },
-  { name: "Oliver Oo", photo: "oliver", role: "Outreach and Nutrition", text: "Ran our Instagram posts and was also our nutritionist." },
+  { name: "Oliver Oo", photo: "oliver", role: "Outreach", text: "Ran our Instagram posts and got the word out about the campaign." },
   { name: "Harley Huang", photo: "harley", role: "Route Master", text: "Researched and planned a safe 70 km route along the East Coast to Changi and back towards Marina Bay." },
-  { name: "Bruce Liau", photo: "bruce", role: "Health and Safety", text: "Led safety planning, timing and our arrangements on the day, together with Chenyu." },
+  { name: "Bruce Liau", photo: "bruce", role: "Health, Safety and Nutrition", text: "Led safety planning, timing and our arrangements on the day with Chenyu, and was also our nutritionist." },
   { name: "Chenyu Hsiao", photo: "chenyu", role: "Equipment", text: "Looked after bikes and kit, and shared the logistics of the day with Bruce." },
 ];
 
