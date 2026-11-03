@@ -5,7 +5,7 @@ const FOOT = 216; // room under the route for the readout and buttons
 const LABEL_GAP = 84; // closest two stage labels may sit
 const STAGE_INFO = [
   { when: "March 2026", what: "Choosing a cause" },
-  { when: "March to May 2026", what: "Roles, goals, the MWLC" },
+  { when: "March to May 2026", what: "Roles, practice rides, the MWLC" },
   { when: "April to June 2026", what: "Outreach and the ride" },
   { when: "June to August 2026", what: "What we raised and learnt" },
   { when: "Tonight", what: "Sharing it with you" },

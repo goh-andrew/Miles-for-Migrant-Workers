@@ -62,7 +62,8 @@ export function Title({ active, headingId }: PanelProps) {
             <tr><th scope="row">Fundraising</th><td>Andrew Goh</td></tr>
             <tr><th scope="row">Outreach</th><td>Oliver Oo</td></tr>
             <tr><th scope="row">Route</th><td>Harley Huang</td></tr>
-            <tr><th scope="row">Logistics</th><td>Bruce Liau, Chenyu Hsiao</td></tr>
+            <tr><th scope="row">Health</th><td>Bruce Liau</td></tr>
+            <tr><th scope="row">Equipment</th><td>Chenyu Hsiao</td></tr>
             <tr><th scope="row">Commenced</th><td>17 March 2026</td></tr>
           </tbody>
         </table>
@@ -182,9 +183,9 @@ export function ProBono({ headingId }: PanelProps) {
 const ROLES = [
   { name: "Andrew Goh", photo: "andrew", role: "Fundraising", text: "Set up the Giving.sg campaign and the pledge form, wrote to ProBono SG, and checked the charity's status." },
   { name: "Oliver Oo", photo: "oliver", role: "Outreach", text: "Ran our Instagram posts and got the word out about the campaign." },
-  { name: "Harley Huang", photo: "harley", role: "Route Master", text: "Researched and planned a safe 70 km route along the East Coast to Changi and back towards Marina Bay." },
-  { name: "Bruce Liau", photo: "bruce", role: "Health, Safety and Nutrition", text: "Led safety planning, timing and our arrangements on the day with Chenyu, and was also our nutritionist." },
-  { name: "Chenyu Hsiao", photo: "chenyu", role: "Equipment", text: "Looked after bikes and kit, and shared the logistics of the day with Bruce." },
+  { name: "Harley Huang", photo: "harley", role: "Route Master", text: "Planned our 70 km route. When the Rail Corridor turned out too rocky, moved us to the East Coast, out to Changi and back towards Marina Bay." },
+  { name: "Bruce Liau", photo: "bruce", role: "Health, Safety and Nutrition", text: "Kept our routes safe to ride and planned what we ate and drank. Brought the 100PLUS and bananas on ride day." },
+  { name: "Chenyu Hsiao", photo: "chenyu", role: "Equipment", text: "Looked after our bikes and kit. After two lots of rental bikes let us down, we borrowed bikes from a friend. Also bought padding for all of us." },
 ];
 
 export const ROLE_COUNT = ROLES.length;
@@ -237,42 +238,63 @@ export function Roles({ headingId, step = 0, onStep }: PanelProps) {
   );
 }
 
-/* 05 ----------------------------------------------------------------- */
-export function Goals({ active, headingId }: PanelProps) {
+/* 05b ---------------------------------------------------------------- */
+const CHANGES = [
+  { who: "Harley, route", what: "The East Coast instead: smooth paths and far fewer traffic lights." },
+  { who: "Bruce, health and safety", what: "No more rocky paths, and a food plan for 70 km: 100PLUS and bananas." },
+  { who: "Chenyu, equipment", what: "Bikes borrowed from a friend outside school, and padding for all of us." },
+];
+
+export function Practice({ headingId }: PanelProps) {
   return (
-    <div className="p-goals">
-      <div className="p-goals__head">
-        <h2 id={headingId} className="h-panel">
-          <span>Our</span> <span>goals</span>
+    <div className="p-practice">
+      <div className="p-practice__text">
+        <h2 id={headingId} className="h-panel" data-enter style={i(0)}>
+          Two practice rides
         </h2>
-        <p className="body">We set these on 26 March, after our call with ProBono SG.</p>
-        <figure className="paste p-goals__photo">
+        <div className="p-practice__events">
+          <div data-enter style={i(1)}>
+            <p className="label">Practice 1, 17 April</p>
+            <p className="body">
+              We rode Anywheel bikes from Chinese Garden along the Rail Corridor. The path was too rocky to ride safely,
+              and we kept stopping at traffic lights. The bikes were slow, too: 10.5&nbsp;km took us an hour.
+            </p>
+          </div>
+          <div data-enter style={i(2)}>
+            <p className="label">Practice 2</p>
+            <p className="body">
+              We tried the East Coast route on bikes rented from GoCycling and only got halfway. The gears stopped
+              working, and the chain came off Chenyu's bike.
+            </p>
+          </div>
+        </div>
+        <div className="p-practice__changes" data-enter style={i(3)}>
+          <h3 className="label">What we changed for 1 June</h3>
+          <dl>
+            {CHANGES.map((c) => (
+              <div key={c.who}>
+                <dt className="label">{c.who}</dt>
+                <dd className="body">{c.what}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </div>
+      <div className="p-practice__media">
+        <figure className="paste p-practice__photo" data-paste style={{ "--r": "3deg" } as CSSProperties}>
           <img
-            src={img("stretching.jpg")}
-            alt="Four of us in helmets stretching at a park fitness corner before a ride"
-            width={1600}
-            height={1200}
+            src={img("practice-1.jpg")}
+            alt="Strava map of our first practice ride: 10.50 km in 1 hour from Chinese Garden towards Upper Bukit Timah, 73 m of climbing"
+            width={601}
+            height={1067}
           />
-          <figcaption>Warming up before a ride</figcaption>
+          <span className="sticker p-practice__sticker">Practice 1: too rocky</span>
         </figure>
       </div>
-      <aside className="board p-goals__board" aria-label="Our targets">
-        <div>
-          <FlipTiles value="2500" prefix="$" active={active} label="2,500 dollars" />
-          <p className="tile-caption">our fundraising target for the MWLC</p>
-        </div>
-        <table className="credits">
-          <tbody>
-            <tr><th scope="row">People reached</th><td>100 or more</td></tr>
-            <tr><th scope="row">Raised by each of us</th><td>About $500</td></tr>
-            <tr><th scope="row">Distance</th><td>70 km</td></tr>
-            <tr><th scope="row">Ride day</th><td>1 June 2026</td></tr>
-          </tbody>
-        </table>
-      </aside>
     </div>
   );
 }
+
 /* 06 ----------------------------------------------------------------- */
 export function Mwlc({ headingId }: PanelProps) {
   return (
@@ -350,7 +372,6 @@ export function People({ headingId }: PanelProps) {
     { what: "Friends and family", how: "Each of us messaged our own circle, then followed up in person." },
     { what: "Around school", how: "We talked to classmates and teachers about it." },
     { what: "Our Geography trip", how: "In Thailand, our teacher let us speak to the whole trip group." },
-    { what: "Parents' networks", how: "ProBono SG suggested we ask the adults around us, too." },
   ];
   return (
     <div className="p-people">
@@ -368,7 +389,7 @@ export function People({ headingId }: PanelProps) {
           ))}
         </ul>
       </div>
-      <blockquote className="p-people__quote" data-enter style={i(5)}>
+      <blockquote className="p-people__quote" data-enter style={i(4)}>
         <p className="statement">
           Fundraising is not just about collecting money but about getting people to care about an issue they might
           not have considered before.
@@ -534,6 +555,15 @@ export function Result({ headingId }: PanelProps) {
         From 50+ donors, through Giving.sg and pledges, by the time the campaign closed in August. That is just over
         double our goal.
       </p>
+      <table className="credits p-result__goals" data-enter style={i(3)}>
+        <caption className="label">Our goals, set on 26 March</caption>
+        <tbody>
+          <tr><th scope="row">Raise $2,500</th><td>$5,067</td></tr>
+          <tr><th scope="row">About $500 each</th><td>About $1,013 each</td></tr>
+          <tr><th scope="row">Ride 70 km on 1 June</th><td>70.19 km on 1 June</td></tr>
+          <tr><th scope="row">Reach 100 or more people</th><td>50+ donors, 1,770 LinkedIn impressions</td></tr>
+        </tbody>
+      </table>
       <div className="p-result__bar" role="img" aria-label="$5,067 raised against a goal of $2,500; $2,111 had been raised before the ride">
         <div className="p-result__fill" />
         <div className="p-result__tick" style={{ left: at(2111) }}>

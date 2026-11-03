@@ -11,7 +11,7 @@ export const NOTICES: Record<string, Notice> = {
     body: (
       <ol className="n-stages">
         <li><h3>Investigation</h3><p>Choosing a cause, and learning how ProBono SG works.</p></li>
-        <li><h3>Preparation</h3><p>Roles, goals, a visit to the MWLC, and setting up the campaign.</p></li>
+        <li><h3>Preparation</h3><p>Roles, two practice rides, a visit to the MWLC, and setting up the campaign.</p></li>
         <li><h3>Action</h3><p>Telling people about the cause, online and in person, then riding 70.19 km on 1 June.</p></li>
         <li><h3>Reflection</h3><p>What we raised, and what we learnt.</p></li>
         <li><h3>Demonstration</h3><p>Tonight's presentation.</p></li>
@@ -55,7 +55,7 @@ export const NOTICES: Record<string, Notice> = {
         <li><strong>20 March</strong><span>Meeting 3: set the first practice ride; drafted the email to ProBono SG.</span></li>
         <li><strong>21 March</strong><span>Email sent to ProBono SG; Tricia Teo replied.</span></li>
         <li><strong>26 March</strong><span>Call with ProBono SG; set our goals; chose the name.</span></li>
-        <li><strong>17 April</strong><span>First practice ride.</span></li>
+        <li><strong>17 April</strong><span>First practice ride, along the Rail Corridor. Too rocky, so we changed the route.</span></li>
         <li><strong>28 May</strong><span>Visited the MWLC and met Nur.</span></li>
         <li><strong>1 June</strong><span>Ride day: 70.19 km.</span></li>
         <li><strong>August</strong><span>Campaign closed at $5,067; final reflections.</span></li>
@@ -69,8 +69,28 @@ export const NOTICES: Record<string, Notice> = {
       <div className="n-split">
         <img src={img("stretching.jpg")} alt="Four of us stretching at an exercise corner before a practice ride" width={1600} height={1200} loading="lazy" />
         <div>
-          <p>Harley planned the route along the East Coast, towards Changi and back to Marina Bay, so the whole group could ride it safely.</p>
-          <p>Our first practice ride was on 17 April. Bruce and Chenyu handled safety, timing and equipment.</p>
+          <p>Our first practice ride, on 17 April, took an hour to cover 10.5 km from Chinese Garden, much of it on rocky paths, with 73 m of climbing.</p>
+          <p>Harley then moved us to the East Coast. It was far flatter: on 1 June we climbed only 95 m in all 70.19 km.</p>
+          <p>Bruce and Chenyu handled safety, timing and equipment. Chenyu also bought padding for everyone, for the four hours in the saddle.</p>
+        </div>
+      </div>
+    ),
+  },
+  pledge: {
+    id: "pledge",
+    title: "Our pledge form",
+    body: (
+      <div className="n-split">
+        <img
+          src={img("pledge-form.jpg")}
+          alt="Our Tally pledge form: a note about the ride and the MWLC, a link to our Giving.sg page, then boxes for name, email and pledge per kilometre, with an estimated total"
+          width={1400}
+          height={1283}
+          loading="lazy"
+        />
+        <div>
+          <p>We built the pledge form on Tally. Supporters gave their name, their email and an amount for each kilometre, and the form showed what that would add up to over 70 km.</p>
+          <p>Nobody paid anything upfront. The form promised that after 1 June we would send proof of the ride and how to pay, and that is what we did.</p>
         </div>
       </div>
     ),
