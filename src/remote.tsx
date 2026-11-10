@@ -245,6 +245,9 @@ export function Remote({ code }: { code: string }) {
           </div>
 
           <nav className="rm__stages" aria-label="Jump to a stage">
+            <button className={deck.index === 0 ? "is-current" : undefined} onClick={() => send({ t: "go", n: 0 })}>
+              Home
+            </button>
             {deck.stages.map((name, s) => (
               <button key={name} className={s === deck.stage ? "is-current" : undefined} onClick={() => send({ t: "stage", s })}>
                 {name}
