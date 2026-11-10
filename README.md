@@ -21,6 +21,22 @@ It is one scrolling page. On a laptop or projector, the route down the left show
 | Home / End | Top / last section |
 | F | Fullscreen |
 
+| R | Show the hidden remote link (see below) |
+| L | Start or stop the auto-loop |
+
+### Control it from a phone
+
+Press **R** on the laptop. A panel shows a private link (`...?remote=<code>`). Open it on a phone or tablet: it shows the current section with big Back and Next buttons, the five stage buttons, and the auto-loop switch. The code is random and saved in the laptop's browser, so the same link keeps working after a reload. Nothing on the slides points to it. Anyone with the link can drive the deck, so do not post it.
+
+There are two ways it connects:
+
+- **Internet (default).** The devices connect directly (WebRTC), using PeerJS's free public relay only to introduce them. Both need internet, and it fails on networks that block WebRTC, which some school wifi does.
+- **Local, no internet (use this at school).** On the laptop run `npm run build` once, then `npm run present` instead of opening `dist/index.html`. Open http://localhost:4173 on the laptop. The phone must be on the same network as the laptop; press **R** and the link it shows uses the laptop's network address. If the school wifi isolates devices from each other, turn on the laptop's mobile hotspot, join the phone to it, and use the link from the terminal output (`Remote: http://<address>:4173/?remote=1`). The deck and remote switch to this mode automatically.
+
+### Auto-loop
+
+Press **L** (or use the switch in the R panel or on the phone). It advances every 10 to 60 seconds (default 20), steps through the riders on "Our roles", and goes back to the title after the last section. Any manual move restarts the countdown, and an open notice pauses it. While it runs, the 3-minute idle reset is off.
+
 The cursor hides after 2 seconds. On the booth laptop the page scrolls back to the top after 3 minutes idle; add `?attract=off` to the address to stop that. Screens narrower than 1100px get the phone layout.
 
 ## Hosting on GitHub Pages

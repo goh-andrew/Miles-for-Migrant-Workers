@@ -4,6 +4,7 @@ import * as P from "./panels";
 import { NOTICES } from "./notices";
 import { Spine } from "./components/Spine";
 import { useIsNarrow, usePageLayout, usePrefersReducedMotion } from "./hooks";
+import { LOOP_CHOICES, remoteUrl, useRemoteHost, type Command, type LoopState } from "./remote";
 
 const STAGES = ["Investigation", "Preparation", "Action", "Reflection", "Demonstration"] as const;
 
@@ -71,6 +72,11 @@ export function Deck() {
   const [seen, setSeen] = useState<Set<number>>(() => new Set([0]));
   const [notice, setNotice] = useState<string | null>(null);
   const [cursorHidden, setCursorHidden] = useState(false);
+  // Auto-loop: steps forward every few seconds and starts again from the top after the last section.
+  const [loop, setLoop] = useState<LoopState>({ on: false, secs: 20 });
+  const [showLink, setShowLink] = useState(false);
+  const loopOn = useRef(false);
+  loopOn.current = loop.on;
   const noticeReturn = useRef<HTMLElement | null>(null);
   const sections = useRef<(HTMLElement | null)[]>([]);
   // While a jump is scrolling, the scroll position should not overrule where we are going.
@@ -288,6 +294,14 @@ export function Deck() {
           if (id) openNotice(id);
           break;
         }
+        case "r":
+        case "R":
+          if (!inControl) setShowLink((v) => !v);
+          break;
+        case "l":
+        case "L":
+          if (!inControl) setLoop((l) => ({ ...l, on: !l.on }));
+          break;
         case "f":
         case "F":
           if (document.fullscreenElement) document.exitFullscreen();
@@ -301,6 +315,92 @@ export function Deck() {
     return () => window.removeEventListener("keydown", onKey);
   }, [index, notice, go, forward, back, openNotice, closeNotice]);
 
+  // The auto-loop. Any move (keys, remote, wheel) restarts the countdown; an open notice pauses it.
+  useEffect(() => {
+    if (!loop.on || notice) return;
+    const t = window.setTimeout(() => {
+      if (index >= LAST && step >= lastStep) go(0);
+      else forward();
+    }, loop.secs * 1000);
+    return () => clearTimeout(t);
+  }, [loop.on, loop.secs, notice, index, step, lastStep, go, forward]);
+
+  // The hidden remote link: a phone opens it and drives this deck.
+  const current = PANELS[index];
+  const stage = current.stage;
+  const remote = useRemoteHost(
+    {
+      index,
+      total: PANELS.length,
+      title: current.title,
+      when: current.when,
+      stage,
+      stages: STAGES,
+      nextLabel: step < lastStep && current.stepLabel ? current.stepLabel : "Next",
+      canBack: index > 0 || step > 0,
+      canNext: index < LAST || step < lastStep,
+      loop,
+    },
+    (c: Command) => {
+      switch (c.t) {
+        case "next":
+          forward();
+          break;
+        case "back":
+          back();
+          break;
+        case "go":
+          if (Number.isInteger(c.n)) go(c.n);
+          break;
+        case "stage":
+          if (Number.isInteger(c.s) && c.s >= 0 && c.s < STAGES.length) go(firstOfStage(c.s));
+          break;
+        case "loop":
+          setLoop((l) => ({
+            on: typeof c.on === "boolean" ? c.on : l.on,
+            secs: LOOP_CHOICES.includes(c.secs as number) ? (c.secs as number) : l.secs,
+          }));
+          break;
+      }
+    },
+  );
+  // On the local relay the phone needs this laptop's network address, not "localhost".
+  const lanHost = remote.relay?.hosts[0] ? `${remote.relay.hosts[0]}:${remote.relay.port}` : undefined;
+  const link = remoteUrl(remote.code, lanHost);
+  const linkPanel = showLink && (
+    <aside className="rlink" aria-label="Remote control">
+      <h2>Control from another device</h2>
+      <p>Open this private link on a phone or tablet. Anyone with the link can drive the deck, so keep it to yourselves.</p>
+      <code>{link}</code>
+      <div className="rlink__row">
+        <button onClick={() => navigator.clipboard?.writeText(link)}>Copy link</button>
+        <button onClick={() => setLoop((l) => ({ ...l, on: !l.on }))} aria-pressed={loop.on}>
+          Auto-loop: {loop.on ? "on" : "off"}
+        </button>
+        <select
+          aria-label="Seconds per section"
+          value={loop.secs}
+          onChange={(e) => setLoop((l) => ({ ...l, secs: Number(e.target.value) }))}
+        >
+          {LOOP_CHOICES.map((n) => (
+            <option key={n} value={n}>
+              {n}s
+            </option>
+          ))}
+        </select>
+        <button onClick={() => setShowLink(false)}>Close</button>
+      </div>
+      <p className="rlink__hint">
+        {remote.relay
+          ? "Local mode: works without internet, but the phone must be on the same wifi or hotspot as this laptop."
+          : remote.online
+            ? `${remote.linked} device${remote.linked === 1 ? "" : "s"} connected.`
+            : "Connecting to the relay…"}{" "}
+        Keys: R shows this, L starts or stops the loop.
+      </p>
+    </aside>
+  );
+
   // Hide the cursor while presenting; go back to the top when the booth is left alone.
   useEffect(() => {
     if (narrow) return;
@@ -312,7 +412,7 @@ export function Deck() {
       clearTimeout(hideT);
       clearTimeout(attractT);
       hideT = window.setTimeout(() => setCursorHidden(true), 2000);
-      if (!attractOff)
+      if (!attractOff && !loopOn.current)
         attractT = window.setTimeout(() => {
           setSteps({});
           window.scrollTo({ top: 0, behavior: "smooth" });
@@ -327,9 +427,6 @@ export function Deck() {
       evs.forEach((ev) => window.removeEventListener(ev, wake));
     };
   }, [narrow]);
-
-  const current = PANELS[index];
-  const stage = current.stage;
 
   const section = (p: PanelDef, n: number) => {
     const headingId = `h-${p.key}`;
@@ -393,6 +490,7 @@ export function Deck() {
         </nav>
         <main>{PANELS.map(section)}</main>
         {sheet}
+        {linkPanel}
       </div>
     );
   }
@@ -431,6 +529,7 @@ export function Deck() {
         </main>
       </div>
       {sheet}
+      {linkPanel}
     </div>
   );
 }
