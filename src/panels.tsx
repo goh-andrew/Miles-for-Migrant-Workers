@@ -36,7 +36,7 @@ export function Title({ active, headingId }: PanelProps) {
           <span>Miles for</span> <span>Migrant Workers</span>
         </h1>
         <p className="statement p-title__lede" data-enter style={i(1)}>
-          We rode 70.19&nbsp;km and raised $5,067 for ProBono&nbsp;SG's Migrant Workers Law Centre.
+          We rode 70.19&nbsp;km and raised $5,067 for ProBono&nbsp;SG's Migrant Workers Law Centre
         </p>
         <figure className="paste p-title__photo" data-paste style={{ "--r": "4deg" } as CSSProperties}>
           <img
@@ -77,10 +77,10 @@ export function Title({ active, headingId }: PanelProps) {
 
 /* 01 ----------------------------------------------------------------- */
 const PROBLEMS = [
-  ["Unpaid wages", "Working for weeks or months without being paid what was agreed."],
-  ["Wrongful dismissal", "Losing a job unfairly, and often the work permit."],
-  ["Unsafe conditions", "Getting hurt at work and having to fight for treatment or compensation."],
-  ["Contract disputes", "Pay or terms that change after arrival, in a contract they may not be able to read."],
+  ["Unpaid wages", "Working for weeks or months without being paid what was agreed"],
+  ["Wrongful dismissal", "Losing a job unfairly, and often the work permit"],
+  ["Unsafe conditions", "Getting hurt at work and having to fight for treatment or compensation"],
+  ["Contract disputes", "Pay or terms that change after arrival, in a contract they may not be able to read"],
 ] as const;
 
 export function Skyline({ headingId }: PanelProps) {
@@ -89,7 +89,7 @@ export function Skyline({ headingId }: PanelProps) {
       <div className="p-skyline__slogan" data-enter style={i(0)}>
         <p className="statement">
           We often walk past construction sites, clean public spaces and new skyscrapers without thinking twice about
-          the people behind them.
+          the people behind them
         </p>
         <h2 id={headingId} className="h-panel">
           <span>The people behind</span> <span>the skyline</span>
@@ -106,7 +106,7 @@ export function Skyline({ headingId }: PanelProps) {
         </ol>
       </div>
       <p className="p-skyline__close" data-enter style={i(2)}>
-        Most migrant workers can't afford a lawyer when this happens.
+        Most migrant workers can't afford a lawyer when this happens
       </p>
     </div>
   );
@@ -152,9 +152,9 @@ export function ProBono({ headingId }: PanelProps) {
           <span>Learning from</span> <span>ProBono&nbsp;SG</span>
         </h2>
         <ul className="p-probono__list">
-          <li>The MWLC is one part of a wider legal-aid network, alongside criminal defence and community law centres in Hougang and Woodlands.</li>
-          <li>ProBono SG also refers clients to social services for problems outside the law.</li>
-          <li>We started to see access to justice as something that affects people's wellbeing as well as their legal rights.</li>
+          <li>The MWLC is one part of a wider legal-aid network, alongside criminal defence and community law centres in Hougang and Woodlands</li>
+          <li>ProBono SG also refers clients to social services for problems outside the law</li>
+          <li>We started to see access to justice as something that affects people's wellbeing as well as their legal rights</li>
         </ul>
       </div>
       <figure className="p-probono__photo">
@@ -167,7 +167,7 @@ export function ProBono({ headingId }: PanelProps) {
           />
         </div>
         <figcaption className="body">
-          26 March 2026: our call with Tricia Teo, Manager of Development and Communications at ProBono SG.
+          26 March 2026: our call with Tricia Teo, Manager of Development and Communications at ProBono SG
         </figcaption>
       </figure>
     </div>
@@ -236,9 +236,9 @@ export function Roles({ headingId, step = 0, onStep }: PanelProps) {
 
 /* 05b ---------------------------------------------------------------- */
 const CHANGES = [
-  { who: "Harley, route", what: "The East Coast instead: smooth paths and far fewer traffic lights." },
-  { who: "Bruce, health and safety", what: "No more rocky paths, and a food plan for 70 km: 100PLUS and bananas." },
-  { who: "Chenyu, equipment", what: "Bikes borrowed from a friend outside school, and padding for all of us." },
+  { who: "Harley, route", what: "The East Coast instead: smooth paths and far fewer traffic lights" },
+  { who: "Bruce, health and safety", what: "No more rocky paths, and a food plan for 70 km: 100PLUS and bananas" },
+  { who: "Chenyu, equipment", what: "Bikes borrowed from a friend outside school, and padding for all of us" },
 ];
 
 export function Practice({ headingId }: PanelProps) {
@@ -309,15 +309,15 @@ export function Mwlc({ headingId }: PanelProps) {
         </h2>
         <p className="body p-mwlc__where" data-enter style={i(1)}>
           On 28 May we visited 579 Serangoon Road, an office shared with the Migrant Workers' Centre, and met
-          Nur, the MWLC's only full-time lawyer.
+          Nur, the MWLC's only full-time lawyer
         </p>
         <ul className="p-mwlc__list" data-enter style={i(2)}>
-          <li>Most cases are unpaid wages, wrongful dismissal and contract disputes.</li>
-          <li>Many clients know little about their rights or about Singapore's legal system.</li>
-          <li>Free legal clinics teach workers their rights before problems start.</li>
+          <li>Most cases are unpaid wages, wrongful dismissal and contract disputes</li>
+          <li>Many clients know little about their rights or about Singapore's legal system</li>
+          <li>Free legal clinics teach workers their rights before problems start</li>
         </ul>
         <p className="statement" data-enter style={i(3)}>
-          So part of the MWLC's work is helping workers before they ever need a lawyer.
+          Part of the MWLC's work is helping workers before they need a lawyer
         </p>
       </div>
     </div>
@@ -365,9 +365,8 @@ export function Give({ active, headingId }: PanelProps) {
 /* 08 ----------------------------------------------------------------- */
 export function People({ headingId }: PanelProps) {
   const rows = [
-    { what: "Friends and family", how: "Each of us messaged our own circle, then followed up in person." },
-    { what: "Around school", how: "We talked to classmates and teachers about it." },
-    { what: "Our Geography trip", how: "In Thailand, our teacher let us speak to the whole trip group." },
+    { what: "Friends and family", how: "Each of us messaged our own circle, then followed up in person" },
+    { what: "Around school", how: "We talked to classmates and teachers about it" },
   ];
   return (
     <div className="p-people">
@@ -385,10 +384,10 @@ export function People({ headingId }: PanelProps) {
           ))}
         </ul>
       </div>
-      <blockquote className="p-people__quote" data-enter style={i(4)}>
+      <blockquote className="p-people__quote" data-enter style={i(3)}>
         <p className="statement">
           Fundraising is not just about collecting money but about getting people to care about an issue they might
-          not have considered before.
+          not have considered before
         </p>
       </blockquote>
     </div>
@@ -452,7 +451,7 @@ export function Ride({ active, headingId }: PanelProps) {
           Ride day, 1&nbsp;June
         </h2>
         <p className="body" data-enter style={i(1)}>
-          We set off at about 8:30 am and rode East Coast Park, out to Changi, and back towards Marina Bay.
+          We set off at about 8:30 am and rode East Coast Park, out to Changi, and back towards Marina Bay
         </p>
       </div>
       <RouteMap active={active} />
@@ -485,15 +484,15 @@ export function Plan({ headingId }: PanelProps) {
         <div className="p-plan__events">
           <div data-enter style={i(1)}>
             <p className="label">A slow puncture</p>
-            <p className="body">One bike kept losing air, so we stopped every so often to pump it back up.</p>
+            <p className="body">One bike kept losing air, so we were forced to stop every so often to pump it back up</p>
           </div>
           <div data-enter style={i(2)}>
             <p className="label">Rain near Kallang</p>
-            <p className="body">We sped up to stay ahead of the clouds, and it cleared.</p>
+            <p className="body">We sped up to stay ahead of the clouds, and luckily it cleared</p>
           </div>
         </div>
         <p className="statement" data-enter style={i(3)}>
-          We still finished all 70.19&nbsp;km.
+          We still finished all 70.19&nbsp;km
         </p>
       </div>
       <div className="p-plan__media">
@@ -631,7 +630,7 @@ export function Questions({ headingId }: PanelProps) {
           </a>
         </div>
         <p className="body p-questions__thanks" data-enter style={i(2)}>
-          Thank you to ProBono SG, Tricia Teo, Nur at the MWLC and our 50+ donors.
+          Thank you to ProBono SG, Tricia Teo, Nur at the MWLC and our 50+ donors
         </p>
       </div>
     </div>

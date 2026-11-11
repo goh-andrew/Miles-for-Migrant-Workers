@@ -10,11 +10,11 @@ export const NOTICES: Record<string, Notice> = {
     title: "Our route tonight",
     body: (
       <ol className="n-stages">
-        <li><h3>Investigation</h3><p>Choosing a cause, and learning how ProBono SG works.</p></li>
-        <li><h3>Preparation</h3><p>Roles, two practice rides, a visit to the MWLC, and setting up the campaign.</p></li>
-        <li><h3>Action</h3><p>Telling people about the cause, online and in person, then riding 70.19 km on 1 June.</p></li>
-        <li><h3>Reflection</h3><p>What we raised, and what we learnt.</p></li>
-        <li><h3>Demonstration</h3><p>Tonight's presentation.</p></li>
+        <li><h3>Investigation</h3><p>Choosing a cause, and learning how ProBono SG works</p></li>
+        <li><h3>Preparation</h3><p>Roles, two practice rides, a visit to the MWLC, and setting up the campaign</p></li>
+        <li><h3>Action</h3><p>Telling people about the cause, online and in person, then riding 70.19 km on 1 June</p></li>
+        <li><h3>Reflection</h3><p>What we raised, and what we learnt</p></li>
+        <li><h3>Demonstration</h3><p>Tonight's presentation</p></li>
       </ol>
     ),
   },
@@ -27,20 +27,20 @@ export const NOTICES: Record<string, Notice> = {
           <h3>What worked</h3>
           <p>
             We gave out roles at our second meeting, on 17 March, so each of us knew what we were responsible
-            for.
+            for
           </p>
           <p>
             Each of us also messaged our own friends and family, so between us we reached more people than one
-            person could.
+            person could
           </p>
         </div>
         <div>
           <h3>Making decisions together</h3>
           <p>
             We chose the cause, the pledge-per-kilometre model and the name together, after comparing options such as
-            Miles for Migrants, Journey for Justice and Rights for Every Worker.
+            Miles for Migrants, Journey for Justice and Rights for Every Worker
           </p>
-          <p>All five of us were on the call with ProBono SG and at the MWLC visit, so we all heard the same things first-hand.</p>
+          <p>All five of us were on the call with ProBono SG and at the MWLC visit, so we all heard the same things first-hand</p>
         </div>
       </div>
     ),
@@ -139,11 +139,11 @@ export const NOTICES: Record<string, Notice> = {
       <div className="n-cols">
         <div>
           <h3>Collecting pledges</h3>
-          <p>After the ride we sent our pledgers the Strava record as proof of the distance and asked them to give what they had pledged.</p>
+          <p>After the ride we sent our pledgers the Strava record as proof of the distance and asked them to give what they had pledged</p>
         </div>
         <div>
           <h3>Thanking supporters</h3>
-          <p>We posted the ride summary to thank everyone and kept following up until the Giving.sg campaign closed.</p>
+          <p>We posted the ride summary to thank everyone and kept following up until the Giving.sg campaign closed</p>
         </div>
       </div>
     ),
