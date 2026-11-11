@@ -20,30 +20,19 @@
   margin-top: 44px;
   max-width: 24ch;
 }
-/* the beneficiary, credited on the signboard */
+/* the beneficiary's logo, filling whatever height the signboard has left */
 .p-title__credit {
+  flex: 1 1 0;
+  min-height: 0;
   display: flex;
   align-items: center;
-  gap: 24px;
-  padding-top: 28px;
+  justify-content: center;
 }
 .p-title__credit img {
-  width: 96px;
-  height: auto;
-}
-.p-title__credit p {
-  margin: 0;
-  font-size: 24px;
-  line-height: 1.35;
-  font-weight: 500;
-}
-.p-title__credit strong {
-  display: block;
-  font-weight: 850;
-  font-stretch: 108%;
-  font-size: 36px;
-  line-height: 1.1;
-  margin-bottom: 6px;
+  height: 100%;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
 }
 .p-title__photo {
   position: absolute;
@@ -1479,17 +1468,14 @@
   .p-title__wall {
     padding: 48px var(--m) 50vw;
   }
+  /* the board grows with its content here, so the logo takes a set width instead of the leftover height */
   .p-title__credit {
-    padding-top: 18px;
+    flex: none;
+    padding-top: 12px;
   }
   .p-title__credit img {
-    width: 56px;
-  }
-  .p-title__credit p {
-    font-size: 16px;
-  }
-  .p-title__credit strong {
-    font-size: 22px;
+    width: min(60%, 240px);
+    height: auto;
   }
   .p-title__photo {
     right: var(--m);

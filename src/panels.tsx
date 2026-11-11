@@ -68,11 +68,7 @@ export function Title({ active, headingId }: PanelProps) {
           </tbody>
         </table>
         <div className="p-title__credit">
-          <img src={img("probono-shield.png")} alt="ProBono SG shield" width={145} height={184} />
-          <p>
-            <strong>For ProBono SG</strong>
-            The money went to its Migrant Workers Law Centre.
-          </p>
+          <img src={img("probono-logo.png")} alt="ProBono SG: Justice for all" width={609} height={784} />
         </div>
       </aside>
     </div>
@@ -561,7 +557,7 @@ export function Result({ headingId }: PanelProps) {
           <tr><th scope="row">Raise $2,500</th><td>$5,067</td></tr>
           <tr><th scope="row">About $500 each</th><td>About $1,013 each</td></tr>
           <tr><th scope="row">Ride 70 km on 1 June</th><td>70.19 km on 1 June</td></tr>
-          <tr><th scope="row">Reach 100 or more people</th><td>50+ donors, 1,770 LinkedIn impressions</td></tr>
+          <tr><th scope="row">Reach 100 or more people</th><td>50+ donors, 2,000+ reached</td></tr>
         </tbody>
       </table>
       <div className="p-result__bar" role="img" aria-label="$5,067 raised against a goal of $2,500; $2,111 had been raised before the ride">

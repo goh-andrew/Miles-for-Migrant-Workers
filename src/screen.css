@@ -11,7 +11,7 @@
 .page .p-title__wall {
   display: flex;
   flex-direction: column;
-  padding: 120px var(--m) 96px;
+  padding: 120px var(--m) 48px;
 }
 .page .p-title__lede {
   margin-top: 48px;
@@ -24,7 +24,8 @@
   align-self: flex-end;
   margin-top: auto;
   width: auto;
-  height: calc(var(--wall-h) - 780px);
+  /* as tall as the space under the lede allows; capped so the tilted print stays inside the wall's width */
+  height: min(calc(var(--wall-h) - 650px), 820px);
   max-width: 100%;
   aspect-ratio: 4 / 3;
   transform: rotate(2deg);
@@ -48,10 +49,6 @@
 .page .p-title__board .credits td {
   padding: 12px 0;
 }
-.page .p-title__credit p {
-  font-size: 26px;
-}
-
 /* ------------------------------ 01 skyline ------------------------------ */
 /* heading across the top, the sentence under it; below, the four problems as a numbered 2 x 2
    on the left and the closing line, the point of the section, large on the right */
@@ -359,8 +356,20 @@
 .page .p-plan__photo {
   transform: rotate(-3deg);
 }
+/* placed by hand in arrange mode (window 1490 x 916, --wall-h 1475px); translate shifts the
+   print without moving anything else, so these offsets reproduce that placement exactly */
+.page .p-plan__photo {
+  height: min(calc(var(--wall-h) - 420px), 774px);
+  margin-top: 120px;
+  margin-left: -40px;
+  translate: -54px 7px;
+}
+/* the video is the bigger print; it only just overlaps the photo, so the photo and its sticker stay readable */
 .page .p-plan__video {
-  margin-top: 80px;
+  height: min(calc(var(--wall-h) - 393px), 1082px);
+  margin-left: -60px;
+  translate: -28px 3px;
+  margin-top: 0;
   transform: rotate(2deg);
 }
 
